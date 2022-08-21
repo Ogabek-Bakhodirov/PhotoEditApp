@@ -15,6 +15,7 @@ public class CKTextField: UIView {
             titleLabel.text = newValue
         }
     }
+
     public var text: String? {
         get {
             textfield.text
@@ -23,6 +24,16 @@ public class CKTextField: UIView {
             textfield.text = newValue
         }
     }
+
+    public var placeholderText: String? {
+        get {
+            textfield.placeholder
+        }
+        set {
+            textfield.placeholder = newValue
+        }
+    }
+
     public var error: String? { errorLabel.text }
 
     // Private components
@@ -39,6 +50,7 @@ public class CKTextField: UIView {
         let view = UITextField()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = .systemFont(ofSize: 17.0, weight: .regular)
+//        view.attributedPlaceholder
         view.textColor = .white
 
         return view
@@ -84,6 +96,7 @@ public class CKTextField: UIView {
         setupSubviews()
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -93,13 +106,16 @@ public class CKTextField: UIView {
 
 extension CKTextField {
     private func setupSubviews() {
-        self.addSubview(contentView)
+        addSubview(contentView)
 
         NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: self.topAnchor),
-            contentView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            contentView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            contentView.topAnchor.constraint(equalTo: topAnchor),
+            contentView.leftAnchor.constraint(equalTo: leftAnchor),
+            contentView.rightAnchor.constraint(equalTo: rightAnchor),
+            contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+
+        contentView.clipsToBounds = true
+        contentView.layer.cornerRadius = 16.0
     }
 }
