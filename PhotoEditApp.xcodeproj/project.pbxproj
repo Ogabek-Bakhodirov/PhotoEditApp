@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6E10F18528B1E09800FAD4DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10F18428B1E09800FAD4DC /* AppDelegate.swift */; };
-		6E10F18728B1E09800FAD4DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10F18628B1E09800FAD4DC /* SceneDelegate.swift */; };
 		6E10F18928B1E09800FAD4DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10F18828B1E09800FAD4DC /* ViewController.swift */; };
-		6E10F18C28B1E09800FAD4DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E10F18A28B1E09800FAD4DC /* Main.storyboard */; };
 		6E10F18E28B1E09900FAD4DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E10F18D28B1E09900FAD4DC /* Assets.xcassets */; };
 		6E10F19128B1E09900FAD4DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E10F18F28B1E09900FAD4DC /* LaunchScreen.storyboard */; };
 		6E10F19C28B1E09900FAD4DC /* PhotoEditAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10F19B28B1E09900FAD4DC /* PhotoEditAppTests.swift */; };
@@ -29,9 +27,7 @@
 /* Begin PBXFileReference section */
 		6E10F18128B1E09800FAD4DC /* PhotoEditApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoEditApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E10F18428B1E09800FAD4DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6E10F18628B1E09800FAD4DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6E10F18828B1E09800FAD4DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6E10F18B28B1E09800FAD4DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E10F18D28B1E09900FAD4DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E10F19028B1E09900FAD4DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E10F19228B1E09900FAD4DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,9 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				6E10F18428B1E09800FAD4DC /* AppDelegate.swift */,
-				6E10F18628B1E09800FAD4DC /* SceneDelegate.swift */,
 				6E10F18828B1E09800FAD4DC /* ViewController.swift */,
-				6E10F18A28B1E09800FAD4DC /* Main.storyboard */,
 				6E10F18D28B1E09900FAD4DC /* Assets.xcassets */,
 				6E10F18F28B1E09900FAD4DC /* LaunchScreen.storyboard */,
 				6E10F19228B1E09900FAD4DC /* Info.plist */,
@@ -181,7 +175,6 @@
 			files = (
 				6E10F19128B1E09900FAD4DC /* LaunchScreen.storyboard in Resources */,
 				6E10F18E28B1E09900FAD4DC /* Assets.xcassets in Resources */,
-				6E10F18C28B1E09800FAD4DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +214,6 @@
 			files = (
 				6E10F18928B1E09800FAD4DC /* ViewController.swift in Sources */,
 				6E10F18528B1E09800FAD4DC /* AppDelegate.swift in Sources */,
-				6E10F18728B1E09800FAD4DC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +236,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6E10F18A28B1E09800FAD4DC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6E10F18B28B1E09800FAD4DC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6E10F18F28B1E09900FAD4DC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -389,7 +373,6 @@
 				INFOPLIST_FILE = PhotoEditApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -417,7 +400,6 @@
 				INFOPLIST_FILE = PhotoEditApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
