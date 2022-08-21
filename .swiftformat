@@ -1,0 +1,106 @@
+# Rules can be found here: https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md
+
+# Disabled rules
+--disable                           \
+    isEmpty,                        \
+    wrapMultilineStatementBraces,   \
+    wrapEnumCases,                  \
+    sortedImports,                  \
+    trailingCommas,                 \
+    organizeDeclarations,           \
+    assertionFailures,              \
+    preferKeyPath,                  \
+    redundantType,                  \
+    strongOutlets,                  \
+    hoistPatternLet,                \
+    sortedSwitchCases,              \
+    redundantRawValues,             \
+    enumNamespaces,                 \
+    redundantFileprivate,           \
+    markTypes
+
+# Enabled rules
+--enable                        \
+    andOperator,                \
+    anyObjectProtocol,          \
+    blankLinesAroundMark,       \
+    blankLinesAtEndOfScope,     \
+    blankLinesAtStartOfScope,   \
+    blankLinesBetweenScopes,    \
+    consecutiveBlankLines,      \
+    consecutiveSpaces,          \
+    duplicateImports,           \
+    elseOnSameLine,             \
+    emptyBraces,                \
+    extensionAccessControl,     \
+    fileHeader,                 \
+    indent,                     \
+    initCoderUnavailable,       \
+    leadingDelimiters,          \
+    linebreakAtEndOfFile,       \
+    linebreaks,                 \
+    numberFormatting,           \
+    modifierOrder,              \
+    redundantBackticks,         \
+    redundantBreak,             \
+    redundantExtensionACL,      \
+    redundantGet,               \
+    redundantInit,              \
+    redundantLetError,          \
+    redundantNilInit,           \
+    redundantObjc,              \
+    redundantParens,            \
+    redundantPattern,           \
+    redundantReturn,            \
+    redundantSelf,              \
+    redundantVoidReturnType,    \
+    semicolons,                 \
+    spaceAroundBraces,          \
+    spaceAroundBrackets,        \
+    spaceAroundComments,        \
+    spaceAroundGenerics,        \
+    spaceAroundOperators,       \
+    spaceAroundParens,          \
+    spaceInsideBraces,          \
+    spaceInsideBrackets,        \
+    spaceInsideComments,        \
+    spaceInsideGenerics,        \
+    spaceInsideParens,          \
+    strongifiedSelf,            \
+    unusedArguments,            \
+    todos,                      \
+    trailingClosures,           \
+    trailingSpace,              \
+    typeSugar,                  \
+    void,                       \
+    wrap,                       \
+    wrapArguments,              \
+    wrapAttributes,             \
+    wrapSwitchCases,            \
+    wrapConditionalBodies,      \
+    yodaConditions
+
+# Options
+--allman false
+--elseposition same-line
+--guardelse auto
+--header "\nCopyright © 2014 - {year} SuperDispatch Inc\nCreated by SuperDispatch\n"
+--extensionacl on-declarations
+--indent 4
+--self remove
+--semicolons never
+--modifierorder public,fileprivate,private,static,final,class,override,lazy,weak
+--maxwidth 120
+--wraparguments before-first
+--wrapparameters before-first
+--wrapcollections before-first
+--wrapconditions after-first
+--funcattributes preserve
+--typeattributes preserve
+--varattributes preserve
+--stripunusedargs closure-only
+--decimalgrouping 3,5
+
+
+# Exclude files
+--exclude **/Pods,**/NetworkActivityLogger.swift,**/MySuperDispatchUITests,**/Frameworks,**/SourcePackages
