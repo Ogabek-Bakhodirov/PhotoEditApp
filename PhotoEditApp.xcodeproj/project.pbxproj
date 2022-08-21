@@ -14,6 +14,7 @@
 		6E10F19C28B1E09900FAD4DC /* PhotoEditAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10F19B28B1E09900FAD4DC /* PhotoEditAppTests.swift */; };
 		6E161BED28B2946100D15F0F /* ComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E161BD828B2946100D15F0F /* ComponentKit.framework */; };
 		6E161BEE28B2946100D15F0F /* ComponentKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E161BD828B2946100D15F0F /* ComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6E161BF828B2950E00D15F0F /* CKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E161BF728B2950E00D15F0F /* CKTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		6E10F19728B1E09900FAD4DC /* PhotoEditAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoEditAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E10F19B28B1E09900FAD4DC /* PhotoEditAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditAppTests.swift; sourceTree = "<group>"; };
 		6E161BD828B2946100D15F0F /* ComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E161BF728B2950E00D15F0F /* CKTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,16 +130,17 @@
 		6E161BD928B2946100D15F0F /* ComponentKit */ = {
 			isa = PBXGroup;
 			children = (
-				6E161BF628B294AA00D15F0F /* TextField */,
+				6E161BF628B294AA00D15F0F /* CKTextField */,
 			);
 			path = ComponentKit;
 			sourceTree = "<group>";
 		};
-		6E161BF628B294AA00D15F0F /* TextField */ = {
+		6E161BF628B294AA00D15F0F /* CKTextField */ = {
 			isa = PBXGroup;
 			children = (
+				6E161BF728B2950E00D15F0F /* CKTextField.swift */,
 			);
-			path = TextField;
+			path = CKTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +231,7 @@
 					};
 					6E161BD728B2946100D15F0F = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -319,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E161BF828B2950E00D15F0F /* CKTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +471,7 @@
 		6E10F1AC28B1E09900FAD4DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -493,6 +499,7 @@
 		6E10F1AD28B1E09900FAD4DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -560,6 +567,7 @@
 		6E161BF028B2946100D15F0F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -580,6 +588,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -590,6 +599,7 @@
 		6E161BF128B2946100D15F0F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
