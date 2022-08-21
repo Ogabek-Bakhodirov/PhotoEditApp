@@ -1,14 +1,11 @@
 //
-//  PhotoEditAppUITests.swift
-//  PhotoEditAppUITests
-//
-//  Created by eldorbek nusratov on 21/08/22.
+// Copyright © 2014 - 2022 SuperDispatch Inc
+// Created by SuperDispatch
 //
 
 import XCTest
 
 class PhotoEditAppUITests: XCTestCase {
-
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 

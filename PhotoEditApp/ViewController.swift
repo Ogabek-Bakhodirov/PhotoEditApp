@@ -1,19 +1,13 @@
 //
-//  ViewController.swift
-//  PhotoEditApp
-//
-//  Created by eldorbek nusratov on 21/08/22.
+// Copyright © 2014 - 2022 SuperDispatch Inc
+// Created by SuperDispatch
 //
 
 import UIKit
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
-

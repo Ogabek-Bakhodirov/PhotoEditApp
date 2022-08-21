@@ -1,15 +1,12 @@
 //
-//  PhotoEditAppUITestsLaunchTests.swift
-//  PhotoEditAppUITests
-//
-//  Created by eldorbek nusratov on 21/08/22.
+// Copyright © 2014 - 2022 SuperDispatch Inc
+// Created by SuperDispatch
 //
 
 import XCTest
 
 class PhotoEditAppUITestsLaunchTests: XCTestCase {
-
-    override class var runsForEachTargetApplicationUIConfiguration: Bool {
+    class override var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
 
