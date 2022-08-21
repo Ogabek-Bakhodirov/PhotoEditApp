@@ -7,6 +7,25 @@ import Foundation
 import UIKit
 
 public class CKTextField: UIView {
+    public var title: String? {
+        get {
+            titleLabel.text
+        }
+        set {
+            titleLabel.text = newValue
+        }
+    }
+    public var text: String? {
+        get {
+            textfield.text
+        }
+        set {
+            textfield.text = newValue
+        }
+    }
+    public var error: String? { errorLabel.text }
+
+    // Private components
     private lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -57,6 +76,8 @@ public class CKTextField: UIView {
 
         return view
     }()
+
+    // MARK: - Init
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
