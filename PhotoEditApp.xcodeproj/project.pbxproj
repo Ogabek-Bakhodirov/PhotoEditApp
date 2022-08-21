@@ -12,6 +12,8 @@
 		6E10F18E28B1E09900FAD4DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E10F18D28B1E09900FAD4DC /* Assets.xcassets */; };
 		6E10F19128B1E09900FAD4DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E10F18F28B1E09900FAD4DC /* LaunchScreen.storyboard */; };
 		6E10F19C28B1E09900FAD4DC /* PhotoEditAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10F19B28B1E09900FAD4DC /* PhotoEditAppTests.swift */; };
+		6E161BED28B2946100D15F0F /* ComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E161BD828B2946100D15F0F /* ComponentKit.framework */; };
+		6E161BEE28B2946100D15F0F /* ComponentKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E161BD828B2946100D15F0F /* ComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,7 +24,28 @@
 			remoteGlobalIDString = 6E10F18028B1E09800FAD4DC;
 			remoteInfo = PhotoEditApp;
 		};
+		6E161BEB28B2946100D15F0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E10F17928B1E09800FAD4DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E161BD728B2946100D15F0F;
+			remoteInfo = ComponentKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6E161BEF28B2946100D15F0F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6E161BEE28B2946100D15F0F /* ComponentKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6E10F18128B1E09800FAD4DC /* PhotoEditApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoEditApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,6 +56,7 @@
 		6E10F19228B1E09900FAD4DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E10F19728B1E09900FAD4DC /* PhotoEditAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoEditAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E10F19B28B1E09900FAD4DC /* PhotoEditAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditAppTests.swift; sourceTree = "<group>"; };
+		6E161BD828B2946100D15F0F /* ComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,10 +64,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E161BED28B2946100D15F0F /* ComponentKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6E10F19428B1E09900FAD4DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E161BD528B2946100D15F0F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -56,6 +88,7 @@
 		6E10F17828B1E09800FAD4DC = {
 			isa = PBXGroup;
 			children = (
+				6E161BD928B2946100D15F0F /* ComponentKit */,
 				6E10F18328B1E09800FAD4DC /* PhotoEditApp */,
 				6E10F19A28B1E09900FAD4DC /* PhotoEditAppTests */,
 				6E10F18228B1E09800FAD4DC /* Products */,
@@ -67,6 +100,7 @@
 			children = (
 				6E10F18128B1E09800FAD4DC /* PhotoEditApp.app */,
 				6E10F19728B1E09900FAD4DC /* PhotoEditAppTests.xctest */,
+				6E161BD828B2946100D15F0F /* ComponentKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,7 +125,32 @@
 			path = PhotoEditAppTests;
 			sourceTree = "<group>";
 		};
+		6E161BD928B2946100D15F0F /* ComponentKit */ = {
+			isa = PBXGroup;
+			children = (
+				6E161BF628B294AA00D15F0F /* TextField */,
+			);
+			path = ComponentKit;
+			sourceTree = "<group>";
+		};
+		6E161BF628B294AA00D15F0F /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6E161BD328B2946100D15F0F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		6E10F18028B1E09800FAD4DC /* PhotoEditApp */ = {
@@ -102,10 +161,12 @@
 				6E10F17D28B1E09800FAD4DC /* Sources */,
 				6E10F17E28B1E09800FAD4DC /* Frameworks */,
 				6E10F17F28B1E09800FAD4DC /* Resources */,
+				6E161BEF28B2946100D15F0F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6E161BEC28B2946100D15F0F /* PBXTargetDependency */,
 			);
 			name = PhotoEditApp;
 			productName = PhotoEditApp;
@@ -130,6 +191,24 @@
 			productReference = 6E10F19728B1E09900FAD4DC /* PhotoEditAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		6E161BD728B2946100D15F0F /* ComponentKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E161BF428B2946100D15F0F /* Build configuration list for PBXNativeTarget "ComponentKit" */;
+			buildPhases = (
+				6E161BD328B2946100D15F0F /* Headers */,
+				6E161BD428B2946100D15F0F /* Sources */,
+				6E161BD528B2946100D15F0F /* Frameworks */,
+				6E161BD628B2946100D15F0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ComponentKit;
+			productName = ComponentKit;
+			productReference = 6E161BD828B2946100D15F0F /* ComponentKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -146,6 +225,9 @@
 					6E10F19628B1E09900FAD4DC = {
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = 6E10F18028B1E09800FAD4DC;
+					};
+					6E161BD728B2946100D15F0F = {
+						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
@@ -164,6 +246,7 @@
 			targets = (
 				6E10F18028B1E09800FAD4DC /* PhotoEditApp */,
 				6E10F19628B1E09900FAD4DC /* PhotoEditAppTests */,
+				6E161BD728B2946100D15F0F /* ComponentKit */,
 			);
 		};
 /* End PBXProject section */
@@ -179,6 +262,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6E10F19528B1E09900FAD4DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E161BD628B2946100D15F0F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -225,6 +315,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6E161BD428B2946100D15F0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -232,6 +329,11 @@
 			isa = PBXTargetDependency;
 			target = 6E10F18028B1E09800FAD4DC /* PhotoEditApp */;
 			targetProxy = 6E10F19828B1E09900FAD4DC /* PBXContainerItemProxy */;
+		};
+		6E161BEC28B2946100D15F0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E161BD728B2946100D15F0F /* ComponentKit */;
+			targetProxy = 6E161BEB28B2946100D15F0F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -455,6 +557,66 @@
 			};
 			name = Release;
 		};
+		6E161BF028B2946100D15F0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8T58FH89LR;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = elyahk.ComponentKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6E161BF128B2946100D15F0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8T58FH89LR;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = elyahk.ComponentKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -481,6 +643,15 @@
 			buildConfigurations = (
 				6E10F1AF28B1E09900FAD4DC /* Debug */,
 				6E10F1B028B1E09900FAD4DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E161BF428B2946100D15F0F /* Build configuration list for PBXNativeTarget "ComponentKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E161BF028B2946100D15F0F /* Debug */,
+				6E161BF128B2946100D15F0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
