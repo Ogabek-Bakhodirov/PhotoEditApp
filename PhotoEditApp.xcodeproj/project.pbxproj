@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F995BD928B3A18300B62252 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F995BD828B3A18300B62252 /* SignInView.swift */; };
+		0F995BDB28B3A4DC00B62252 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F995BDA28B3A4DC00B62252 /* CustomTextField.swift */; };
 		6E10F18528B1E09800FAD4DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10F18428B1E09800FAD4DC /* AppDelegate.swift */; };
 		6E10F18928B1E09800FAD4DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10F18828B1E09800FAD4DC /* ViewController.swift */; };
 		6E10F18E28B1E09900FAD4DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E10F18D28B1E09900FAD4DC /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		0F995BD828B3A18300B62252 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		0F995BDA28B3A4DC00B62252 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		6E10F18128B1E09800FAD4DC /* PhotoEditApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoEditApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E10F18428B1E09800FAD4DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E10F18828B1E09800FAD4DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				803EB34728B28A7600B3236D /* Constants */,
 				6E10F19228B1E09900FAD4DC /* Info.plist */,
 				0F995BD828B3A18300B62252 /* SignInView.swift */,
+				0F995BDA28B3A4DC00B62252 /* CustomTextField.swift */,
 			);
 			path = PhotoEditApp;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				6E10F18528B1E09800FAD4DC /* AppDelegate.swift in Sources */,
 				0F995BD928B3A18300B62252 /* SignInView.swift in Sources */,
 				803EB34928B28A9900B3236D /* Constants.swift in Sources */,
+				0F995BDB28B3A4DC00B62252 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

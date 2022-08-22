@@ -1,8 +1,6 @@
 //
-//  SignInView.swift
-//  PhotoEditApp
-//
-//  Created by User 2 on 22/08/22.
+// Copyright © 2014 - 2022 SuperDispatch Inc
+// Created by SuperDispatch
 //
 
 import UIKit
