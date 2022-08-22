@@ -17,10 +17,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
-
+        view.backgroundColor = .red
         setupSubViews()
     }
+
+    // YOU can delete this line(16-33)  i just showing how to use Snapkit
+
+    lazy var welcomeLabel: UILabel = {
+        var view = UILabel()
+        view.text = "Welcome ◎◎"
+        view.textColor = .blue
+        view.font = .monospacedSystemFont(ofSize: 23, weight: .bold)
+        return view
+    }()
+
+    lazy var button: UIButton = {
+        var view = UIButton()
+        view.titleLabel?.text = "click me !!"
+        view.backgroundColor = .gray
+        return view
+    }()
 
     private func setupSubViews() {
         view.addSubview(signInView)
