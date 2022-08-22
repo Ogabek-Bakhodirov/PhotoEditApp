@@ -4,15 +4,13 @@
 //
 
 import UIKit
-import ComponentKit
 
+import SnapKit
 class ViewController: UIViewController {
-    private lazy var textField: CKTextField = {
-        let view = CKTextField()
+    lazy var signInView: SignInView = {
+        let view = SignInView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "example@email.com"
-        view.placeholderText = "Email"
-        view.title = "Email"
+        view.backgroundColor = .red
 
         return view
     }()
@@ -22,13 +20,47 @@ class ViewController: UIViewController {
 
         view.backgroundColor = .red
 
-        view.addSubview(textField)
+        setupSubViews()
+    }
 
-        NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: view.topAnchor, constant: 6.0),
-            textField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 32.0),
-            textField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -32.0),
-            textField.heightAnchor.constraint(equalToConstant: 50.0)
-        ])
+    // YOU can delete this line(16-33)  i just showing how to use Snapkit
+
+    lazy var welcomeLabel: UILabel = {
+        var view = UILabel()
+        view.text = "Welcome ◎◎"
+        view.textColor = .blue
+        view.font = .monospacedSystemFont(ofSize: 23, weight: .bold)
+        return view
+    }()
+
+    lazy var button: UIButton = {
+        var view = UIButton()
+        view.titleLabel?.text = "click me !!"
+        view.backgroundColor = .gray
+        return view
+    }()
+
+    private func setupSubViews() {
+        view.addSubview(signInView)
+
+        signInView.snp.makeConstraints { make in
+            make.top.equalTo(self.view)
+            make.right.equalTo(self.view)
+            make.left.equalTo(self.view)
+            make.bottom.equalTo(self.view)
+        }
+
+        //        welcomeLabel.snp.makeConstraints { make in
+        //            make.top.equalToSuperview().inset(150)
+        //            make.left.equalToSuperview().inset(150)
+        //        }
+        //        // make is snapkits canstraints maker use it to make constrains
+        //        //
+        //        button.snp.makeConstraints { make in
+        //            make.top.equalTo(welcomeLabel).inset(30)
+        //            // buttons top equal to welcoms labels tops + 30 inset
+        //            make.centerX.equalTo(self.view) // buttons center equal to Current VS's view center
+        //            make.height.width.equalTo(200) // width and height equal to 200
+        //        }
     }
 }
