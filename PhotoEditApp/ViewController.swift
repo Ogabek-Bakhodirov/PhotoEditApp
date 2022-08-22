@@ -4,6 +4,7 @@
 //
 
 import UIKit
+
 import SnapKit
 class ViewController: UIViewController {
     lazy var signInView: SignInView = {
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .red
+
         setupSubViews()
     }
 
