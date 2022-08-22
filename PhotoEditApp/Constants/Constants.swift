@@ -59,9 +59,9 @@ enum Icons {
     case squarStack
     case text
     case menuGrid
-    //shadow
-    //opacity
-    //graphic
+    // shadow
+    // opacity
+    // graphic
 
     var icons: UIImage? {
         switch self {

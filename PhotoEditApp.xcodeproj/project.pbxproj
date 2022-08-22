@@ -12,9 +12,8 @@
 		6E10F18E28B1E09900FAD4DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E10F18D28B1E09900FAD4DC /* Assets.xcassets */; };
 		6E10F19128B1E09900FAD4DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E10F18F28B1E09900FAD4DC /* LaunchScreen.storyboard */; };
 		6E10F19C28B1E09900FAD4DC /* PhotoEditAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10F19B28B1E09900FAD4DC /* PhotoEditAppTests.swift */; };
-		6E10F1A628B1E09900FAD4DC /* PhotoEditAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10F1A528B1E09900FAD4DC /* PhotoEditAppUITests.swift */; };
-		6E10F1A828B1E09900FAD4DC /* PhotoEditAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10F1A728B1E09900FAD4DC /* PhotoEditAppUITestsLaunchTests.swift */; };
 		803EB34928B28A9900B3236D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EB34828B28A9900B3236D /* Constants.swift */; };
+		CE90B73728B337A500D2481C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE90B73628B337A500D2481C /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +35,6 @@
 		6E10F19228B1E09900FAD4DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E10F19728B1E09900FAD4DC /* PhotoEditAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoEditAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E10F19B28B1E09900FAD4DC /* PhotoEditAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditAppTests.swift; sourceTree = "<group>"; };
-		6E10F1A128B1E09900FAD4DC /* PhotoEditAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoEditAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E10F1A528B1E09900FAD4DC /* PhotoEditAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditAppUITests.swift; sourceTree = "<group>"; };
-		6E10F1A728B1E09900FAD4DC /* PhotoEditAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		803EB34828B28A9900B3236D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE90B73728B337A500D2481C /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,15 +96,6 @@
 			path = PhotoEditAppTests;
 			sourceTree = "<group>";
 		};
-		6E10F1A428B1E09900FAD4DC /* PhotoEditAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6E10F1A528B1E09900FAD4DC /* PhotoEditAppUITests.swift */,
-				6E10F1A728B1E09900FAD4DC /* PhotoEditAppUITestsLaunchTests.swift */,
-			);
-			path = PhotoEditAppUITests;
-			sourceTree = "<group>";
-		};
 		803EB34728B28A7600B3236D /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +121,9 @@
 			dependencies = (
 			);
 			name = PhotoEditApp;
+			packageProductDependencies = (
+				CE90B73628B337A500D2481C /* SnapKit */,
+			);
 			productName = PhotoEditApp;
 			productReference = 6E10F18128B1E09800FAD4DC /* PhotoEditApp.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +174,9 @@
 				Base,
 			);
 			mainGroup = 6E10F17828B1E09800FAD4DC;
+			packageReferences = (
+				CE90B73528B337A500D2481C /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 6E10F18228B1E09800FAD4DC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -239,7 +233,6 @@
 			files = (
 				6E10F18928B1E09800FAD4DC /* ViewController.swift in Sources */,
 				6E10F18528B1E09800FAD4DC /* AppDelegate.swift in Sources */,
-				6E10F18728B1E09800FAD4DC /* SceneDelegate.swift in Sources */,
 				803EB34928B28A9900B3236D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +506,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE90B73528B337A500D2481C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE90B73628B337A500D2481C /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE90B73528B337A500D2481C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6E10F17928B1E09800FAD4DC /* Project object */;
 }
