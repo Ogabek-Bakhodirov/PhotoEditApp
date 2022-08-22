@@ -35,22 +35,22 @@ class SignInView: UIView {
         return view
     }()
 
-    lazy var signInLabel: UILabel = {
-        let view = UILabel()
+    lazy var signInLabel: UIButton = {
+        let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "Sign In"
-        view.font = .systemFont(ofSize: 32, weight: .bold)
-        view.textColor = Colors.baseTextWhiteColor.colors
+        view.setTitle("Sign In", for: .normal)
+        view.titleLabel?.font = UIFont.boldSystemFont(ofSize: 32.0)
+        view.setTitleColor(Colors.baseTextWhiteColor.colors, for: .normal)
 
         return view
     }()
 
-    lazy var signUpLabel: UILabel = {
-        let view = UILabel()
+    lazy var signUpLabel: UIButton = {
+        let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.font = .systemFont(ofSize: 20, weight: .bold)
-        view.text = "Sign Up"
-        view.textColor = Colors.baseTextFieldDarkGray.colors
+        view.setTitle("Sign Up", for: .normal)
+        view.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
+        view.setTitleColor(Colors.baseTextWhiteColor.colors, for: .normal)
 
         return view
     }()
@@ -60,6 +60,7 @@ class SignInView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = Colors.baseTextFieldDarkGray.colors
         view.textField.textColor = Colors.baseTextWhiteColor.colors
+        view.titleLabel.text = "Email"
         view.layer.cornerRadius = 15.0
         view.title = "Email"
         view.clipsToBounds = true
@@ -73,6 +74,7 @@ class SignInView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = Colors.baseTextFieldDarkGray.colors
         view.textField.textColor = Colors.baseTextWhiteColor.colors
+        view.titleLabel.text = "Password"
         view.layer.cornerRadius = 15.0
         view.title = "Password"
         view.clipsToBounds = true
@@ -146,7 +148,7 @@ class SignInView: UIView {
             signInLabel.rightAnchor.constraint(equalTo: signUpLabel.leftAnchor, constant: -24.0),
             signInLabel.heightAnchor.constraint(equalToConstant: 40.0),
 
-            signUpLabel.topAnchor.constraint(equalTo: registrView.topAnchor, constant: 40.0),
+            signUpLabel.topAnchor.constraint(equalTo: registrView.topAnchor, constant: 45.0),
             signUpLabel.rightAnchor.constraint(equalTo: registrView.rightAnchor, constant: -121.0),
             signUpLabel.heightAnchor.constraint(equalToConstant: 40.0),
 

@@ -91,8 +91,8 @@ class CustomTextField: UIView {
             iconImageView.leftAnchor.constraint(equalTo: textField.rightAnchor),
             iconImageView.rightAnchor.constraint(equalTo: rightAnchor),
             iconImageView.bottomAnchor.constraint(equalTo: textField.bottomAnchor),
-            iconImageView.heightAnchor.constraint(equalToConstant: 14.0),
-            iconImageView.widthAnchor.constraint(equalToConstant: 18.0),
+            iconImageView.heightAnchor.constraint(equalToConstant: 23.0),
+            iconImageView.widthAnchor.constraint(equalToConstant: 30.0),
 
             lineView.leftAnchor.constraint(equalTo: leftAnchor),
             lineView.rightAnchor.constraint(equalTo: rightAnchor),
@@ -132,7 +132,7 @@ extension CustomTextField: UITextFieldDelegate {
     private func validate(with string: String) {
         if string.count > lengthCount {
             lineView.backgroundColor = .green
-            iconImageView.image = Images.ic_apple.images
+            iconImageView.image = Images.ic_eyeSlash.images
         } else {
             lineView.backgroundColor = .systemGray2
             iconImageView.image = nil
