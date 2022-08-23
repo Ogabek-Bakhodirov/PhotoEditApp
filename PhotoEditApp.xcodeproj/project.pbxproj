@@ -20,7 +20,6 @@
 		803EB34928B28A9900B3236D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EB34828B28A9900B3236D /* Constants.swift */; };
 		CE44437028B47BC400E51A35 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44436F28B47BC400E51A35 /* SignUpViewController.swift */; };
 		CE44437228B47E2D00E51A35 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44437128B47E2D00E51A35 /* SignUpView.swift */; };
-		CE44437428B481AB00E51A35 /* RegistrationCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44437328B481AB00E51A35 /* RegistrationCarView.swift */; };
 		CE44438628B494F600E51A35 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE44437A28B494F600E51A35 /* Montserrat-Medium.ttf */; };
 		CE44438728B494F600E51A35 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE44437B28B494F600E51A35 /* Montserrat-Light.ttf */; };
 		CE44438828B494F600E51A35 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE44437C28B494F600E51A35 /* Montserrat-Thin.ttf */; };
@@ -79,7 +78,6 @@
 		803EB34828B28A9900B3236D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE44436F28B47BC400E51A35 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CE44437128B47E2D00E51A35 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		CE44437328B481AB00E51A35 /* RegistrationCarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCarView.swift; sourceTree = "<group>"; };
 		CE44437A28B494F600E51A35 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		CE44437B28B494F600E51A35 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		CE44437C28B494F600E51A35 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				6E10F19228B1E09900FAD4DC /* Info.plist */,
 				0F995BD828B3A18300B62252 /* SignInView.swift */,
 				CE44437128B47E2D00E51A35 /* SignUpView.swift */,
-				CE44437328B481AB00E51A35 /* RegistrationCarView.swift */,
 				0F995BDA28B3A4DC00B62252 /* CustomTextField.swift */,
 			);
 			path = PhotoEditApp;
@@ -389,7 +386,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE44437028B47BC400E51A35 /* SignUpViewController.swift in Sources */,
-				CE44437428B481AB00E51A35 /* RegistrationCarView.swift in Sources */,
 				6E10F18928B1E09800FAD4DC /* ViewController.swift in Sources */,
 				6E10F18528B1E09800FAD4DC /* AppDelegate.swift in Sources */,
 				CE44437228B47E2D00E51A35 /* SignUpView.swift in Sources */,
