@@ -76,7 +76,7 @@ public class CKTextField: UIView {
     private lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .darkGray
+        view.backgroundColor = #colorLiteral(red: 0.1725487709, green: 0.1725491583, blue: 0.1811430752, alpha: 1)
 
         view.addSubview(contentStackView)
         NSLayoutConstraint.activate([

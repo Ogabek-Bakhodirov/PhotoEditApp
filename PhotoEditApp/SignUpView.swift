@@ -6,12 +6,12 @@
 import UIKit
 import SnapKit
 import ComponentKit
+
 class SignUpView: UIView {
     private lazy var backgroundImage: UIImageView = {
         var view = UIImageView()
         view.image = Images.RegistrationPageImage.images
         view.contentMode = .scaleToFill
-
         return view
     }()
 
@@ -66,7 +66,6 @@ class SignUpView: UIView {
     lazy var nameTextField: CKTextField = {
         var view = CKTextField()
         view.placeholderText = "Name"
-
         return view
     }()
 
@@ -79,6 +78,38 @@ class SignUpView: UIView {
     lazy var passwordTextField: CKTextField = {
         var view = CKTextField()
         view.placeholderText = "password"
+        return view
+    }()
+
+    private lazy var registerStackView: UIStackView = {
+        var view = UIStackView(arrangedSubviews: [appleButton, googleButton])
+        view.axis = .horizontal
+        view.spacing = 20
+        view.distribution = .fill
+        return view
+    }()
+
+    lazy var appleButton: UIButton = {
+        var view = UIButton()
+        view.setImage(Images.ic_apple.images, for: .normal)
+        return view
+    }()
+
+    lazy var googleButton: UIButton = {
+        var view = UIButton()
+        view.setImage(Images.ic_google.images, for: .normal)
+
+        return view
+    }()
+
+    lazy var nextButton: UIButton = {
+        var view = UIButton()
+        view.backgroundColor = Colors.basePurple.colors
+        view.setTitle("Next >", for: .normal)
+        view.titleLabel?.font = .montserratMedium(size: 20)
+        view.setTitleColor(Colors.baseTextWhiteColor.colors, for: .normal)
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 25
         return view
     }()
 
@@ -122,6 +153,25 @@ class SignUpView: UIView {
         textFieldsStack.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(32)
             make.top.equalTo(purpleLine).inset(24)
+        }
+
+        addSubview(registerStackView)
+        registerStackView.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(32)
+            make.bottom.equalToSuperview().inset(20)
+        }
+        addSubview(nextButton)
+        nextButton.snp.makeConstraints { make in
+            make.width.equalTo(110)
+            make.height.equalTo(50)
+            make.right.equalToSuperview().inset(32)
+            make.bottom.equalToSuperview().inset(20)
+        }
+        googleButton.snp.makeConstraints { make in
+            make.width.height.equalTo(50)
+        }
+        appleButton.snp.makeConstraints { make in
+            make.width.height.equalTo(50)
         }
     }
 }
