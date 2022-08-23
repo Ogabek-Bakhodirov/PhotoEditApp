@@ -49,7 +49,7 @@ public class CKTextField: UIView {
     private lazy var textfield: UITextField = {
         let view = UITextField()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.font = .systemFont(ofSize: 17.0, weight: .regular)
+        view.font = .montserratRegular(size: 17)
 //        view.attributedPlaceholder
         view.textColor = .white
 
@@ -76,7 +76,7 @@ public class CKTextField: UIView {
     private lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .darkGray
+        view.backgroundColor = #colorLiteral(red: 0.1725487709, green: 0.1725491583, blue: 0.1811430752, alpha: 1)
 
         view.addSubview(contentStackView)
         NSLayoutConstraint.activate([
@@ -117,5 +117,40 @@ extension CKTextField {
 
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 16.0
+    }
+}
+
+extension UIFont {
+    // YOU can use like that: someLabel.font = .montserratBold(size: 40)
+    static func montserratLight(size: CGFloat) -> UIFont? {
+        UIFont(name: "Montserrat-Light", size: size)
+    }
+
+    static func montserratRegular(size: CGFloat) -> UIFont? {
+        UIFont(name: "Montserrat-Regular", size: size)
+    }
+
+    static func montserratThin(size: CGFloat) -> UIFont? {
+        UIFont(name: "Montserrat-Thin", size: size)
+    }
+
+    static func montserratMedium(size: CGFloat) -> UIFont? {
+        UIFont(name: "Montserrat-Medium", size: size)
+    }
+
+    static func montserratBold(size: CGFloat) -> UIFont? {
+        UIFont(name: "Montserrat-Bold", size: size)
+    }
+
+    static func montserratSemiBold(size: CGFloat) -> UIFont? {
+        UIFont(name: "Montserrat-SemiBold", size: size)
+    }
+
+    static func montserratExtraBold(size: CGFloat) -> UIFont? {
+        UIFont(name: "Montserrat-ExtraBold", size: size)
+    }
+
+    static func montserratBlack(size: CGFloat) -> UIFont? {
+        UIFont(name: "Montserrat-Black", size: size)
     }
 }
