@@ -4,8 +4,8 @@
 //
 
 import UIKit
-
 import SnapKit
+
 class ViewController: UIViewController {
     lazy var signInView: SignInView = {
         let view = SignInView()
