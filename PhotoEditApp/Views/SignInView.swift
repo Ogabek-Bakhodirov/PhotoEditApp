@@ -105,10 +105,10 @@ class SignInView: UIView {
         return view
     }()
 
-    lazy var nextButton: IconTextButton = {
-        let view = IconTextButton()
+    lazy var nextButton: CKContentActionButton = {
+        let view = CKContentActionButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.configure(with: IconTextButtonViewModel(
+        view.configure(with: CKContentActionButtonViewModel(
             text: "Next",
             image: UIImage(systemName: "chevron.right"),
             backgroundColor: Colors.basePurple.colors

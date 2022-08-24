@@ -5,13 +5,19 @@
 
 import UIKit
 
-struct IconTextButtonViewModel {
+public struct CKContentActionButtonViewModel {
     let text: String
     let image: UIImage?
     let backgroundColor: UIColor?
+
+    public init(text: String, image: UIImage?, backgroundColor: UIColor?) {
+        self.text = text
+        self.image = image
+        self.backgroundColor = backgroundColor
+    }
 }
 
-class IconTextButton: UIButton {
+public class CKContentActionButton: UIButton {
     lazy var label: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -41,13 +47,13 @@ class IconTextButton: UIButton {
         backgroundColor = .systemBlue
     }
 
-    func configure(with viewModel: IconTextButtonViewModel) {
+    public func configure(with viewModel: CKContentActionButtonViewModel) {
         label.text = viewModel.text
         backgroundColor = viewModel.backgroundColor
         iconImageView.image = viewModel.image
     }
 
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         addSubview(label)
         addSubview(iconImageView)
         super.layoutSubviews()

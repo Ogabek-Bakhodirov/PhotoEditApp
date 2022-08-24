@@ -5,7 +5,7 @@
 
 import UIKit
 
-class CustomTextField: UIView {
+public class CustomTextField: UIView {
     var title = "Email"
     var lengthCount: Int = 6
     lazy var text = textField.text
@@ -103,17 +103,17 @@ class CustomTextField: UIView {
 }
 
 extension CustomTextField: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
         titleLabel.isHidden = false
         textField.attributedPlaceholder = nil
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    public func textFieldDidEndEditing(_ textField: UITextField) {
         titleLabel.isHidden = (textField.text?.isEmpty ?? true) ? true : false
         textField.attributedPlaceholder = placeHolderAttributesString
     }
 
-    func textField(
+    public func textField(
         _ textField: UITextField,
         shouldChangeCharactersIn range: NSRange,
         replacementString string: String
