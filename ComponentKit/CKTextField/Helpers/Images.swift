@@ -23,23 +23,8 @@ public enum Images {
     }
 }
 
-public enum Colors {
-    case baseBackgroundDark
-    case basePurple
-    case baseTextFieldDarkGray
-    case baseTextWhiteColor
-
-    var colors: UIColor? {
-        switch self {
-        case .baseBackgroundDark: return UIColor(named: "baseBackgroundDark")
-        case .basePurple: return UIColor(named: "basePurple")
-        case .baseTextFieldDarkGray: return UIColor(named: "baseTextFieldDarkGray")
-        case .baseTextWhiteColor: return .white
-        }
-    }
-}
-
-enum Icons {
+// TODO: - Combine Icons and Images
+public enum Icons {
     case user
     case filterParametr
     case xMark
@@ -82,41 +67,5 @@ enum Icons {
         case .text: return UIImage(systemName: "textformat")
         case .menuGrid: return UIImage(systemName: "square.grid.2x2")
         }
-    }
-}
-
-// fonts
-extension UIFont {
-    // YOU can use like that: someLabel.font = .montserratBold(size: 40)
-    static func montserratLight(size: CGFloat) -> UIFont? {
-        UIFont(name: "Montserrat-Light", size: size)
-    }
-
-    static func montserratRegular(size: CGFloat) -> UIFont? {
-        UIFont(name: "Montserrat-Regular", size: size)
-    }
-
-    static func montserratThin(size: CGFloat) -> UIFont? {
-        UIFont(name: "Montserrat-Thin", size: size)
-    }
-
-    static func montserratMedium(size: CGFloat) -> UIFont? {
-        UIFont(name: "Montserrat-Medium", size: size)
-    }
-
-    static func montserratBold(size: CGFloat) -> UIFont? {
-        UIFont(name: "Montserrat-Bold", size: size)
-    }
-
-    static func montserratSemiBold(size: CGFloat) -> UIFont? {
-        UIFont(name: "Montserrat-SemiBold", size: size)
-    }
-
-    static func montserratExtraBold(size: CGFloat) -> UIFont? {
-        UIFont(name: "Montserrat-ExtraBold", size: size)
-    }
-
-    static func montserratBlack(size: CGFloat) -> UIFont? {
-        UIFont(name: "Montserrat-Black", size: size)
     }
 }

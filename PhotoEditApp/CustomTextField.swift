@@ -47,7 +47,7 @@ class CustomTextField: UIView {
     private lazy var iconImageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = Images.ic_eyeSlash.images
+//        view.image = Images.ic_eyeSlash.images
 
         return view
     }()
@@ -132,7 +132,7 @@ extension CustomTextField: UITextFieldDelegate {
     private func validate(with string: String) {
         if string.count > lengthCount {
             lineView.backgroundColor = .green
-            iconImageView.image = Images.ic_eyeSlash.images
+//            iconImageView.image = Images.ic_eyeSlash.images
         } else {
             lineView.backgroundColor = .systemGray2
             iconImageView.image = nil
