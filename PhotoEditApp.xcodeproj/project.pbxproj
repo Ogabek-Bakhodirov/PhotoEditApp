@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F59A47828B65FBB004CAB97 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F59A47728B65FBB004CAB97 /* TopView.swift */; };
 		0F995BD928B3A18300B62252 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F995BD828B3A18300B62252 /* SignInView.swift */; };
 		0F995BDB28B3A4DC00B62252 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F995BDA28B3A4DC00B62252 /* CustomTextField.swift */; };
 		0FC3166228B5376200F422A4 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC3166128B5376200F422A4 /* SignInViewController.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F59A47728B65FBB004CAB97 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		0F995BD828B3A18300B62252 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		0F995BDA28B3A4DC00B62252 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		0FC3166128B5376200F422A4 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				CE44437128B47E2D00E51A35 /* SignUpView.swift */,
 				0F995BDA28B3A4DC00B62252 /* CustomTextField.swift */,
 				0FC3166328B55F2900F422A4 /* CustomButton.swift */,
+				0F59A47728B65FBB004CAB97 /* TopView.swift */,
 			);
 			path = PhotoEditApp;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				6E10F18528B1E09800FAD4DC /* AppDelegate.swift in Sources */,
 				CE44437228B47E2D00E51A35 /* SignUpView.swift in Sources */,
 				0FC3166228B5376200F422A4 /* SignInViewController.swift in Sources */,
+				0F59A47828B65FBB004CAB97 /* TopView.swift in Sources */,
 				0F995BD928B3A18300B62252 /* SignInView.swift in Sources */,
 				803EB34928B28A9900B3236D /* Constants.swift in Sources */,
 				0F995BDB28B3A4DC00B62252 /* CustomTextField.swift in Sources */,
