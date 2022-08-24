@@ -35,25 +35,33 @@ class SignInView: UIView {
         return view
     }()
 
-    lazy var signInButton: UIButton = {
-        let view = UIButton()
+    lazy var topView: topView = {
+        let view = PhotoEditApp.topView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("Sign In", for: .normal)
-        view.titleLabel?.font = UIFont.boldSystemFont(ofSize: 32.0)
-        view.setTitleColor(Colors.baseTextWhiteColor.colors, for: .normal)
 
         return view
     }()
 
-    lazy var signUpButton: UIButton = {
-        let view = UIButton()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("Sign Up", for: .normal)
-        view.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
-        view.setTitleColor(Colors.baseTextFieldDarkGray.colors, for: .normal)
-
-        return view
-    }()
+//
+//    lazy var signInButton: UIButton = {
+//        let view = UIButton()
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.setTitle("Sign In", for: .normal)
+//        view.titleLabel?.font = UIFont.boldSystemFont(ofSize: 32.0)
+//        view.setTitleColor(Colors.baseTextWhiteColor.colors, for: .normal)
+//
+//        return view
+//    }()
+//
+//    lazy var signUpButton: UIButton = {
+//        let view = UIButton()
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.setTitle("Sign Up", for: .normal)
+//        view.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
+//        view.setTitleColor(Colors.baseTextFieldDarkGray.colors, for: .normal)
+//
+//        return view
+//    }()
 
     lazy var emailTextField: CKTextField = {
         let view = CKTextField()
@@ -114,8 +122,9 @@ class SignInView: UIView {
     private func setupSubViews() {
         addSubview(signInBackgroundImage)
         addSubview(registrView)
-        addSubview(signInButton)
-        addSubview(signUpButton)
+        addSubview(topView)
+//        addSubview(signInButton)
+//        addSubview(signUpButton)
         addSubview(emailTextField)
         addSubview(passwordTextField)
         addSubview(forgotButton)
@@ -133,15 +142,22 @@ class SignInView: UIView {
             make.height.equalToSuperview().multipliedBy(0.57)
         }
 
-        signInButton.snp.makeConstraints { make in
-            make.top.equalTo(registrView).inset(40.0)
+        topView.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(32.0)
+            make.top.equalTo(registrView).inset(40.0)
+            make.right.equalToSuperview().inset(121.0)
+            make.height.equalTo(43.0)
         }
 
-        signUpButton.snp.makeConstraints { make in
-            make.top.equalTo(registrView).inset(54.0)
-            make.right.equalToSuperview().inset(121.0)
-        }
+//        signInButton.snp.makeConstraints { make in
+//            make.top.equalTo(registrView).inset(40.0)
+//            make.left.equalToSuperview().inset(32.0)
+//        }
+//
+//        signUpButton.snp.makeConstraints { make in
+//            make.top.equalTo(registrView).inset(54.0)
+//            make.right.equalToSuperview().inset(121.0)
+//        }
 
         emailTextField.snp.makeConstraints { make in
             make.right.left.equalToSuperview().inset(32.0)
