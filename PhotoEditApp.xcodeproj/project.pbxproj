@@ -160,6 +160,7 @@
 		6E10F18328B1E09800FAD4DC /* PhotoEditApp */ = {
 			isa = PBXGroup;
 			children = (
+				6EFF663528B6779500385620 /* Views */,
 				6E10F18428B1E09800FAD4DC /* AppDelegate.swift */,
 				6E10F18828B1E09800FAD4DC /* ViewController.swift */,
 				CE44436F28B47BC400E51A35 /* SignUpViewController.swift */,
@@ -167,8 +168,6 @@
 				6E10F18D28B1E09900FAD4DC /* Assets.xcassets */,
 				6E10F18F28B1E09900FAD4DC /* LaunchScreen.storyboard */,
 				6E10F19228B1E09900FAD4DC /* Info.plist */,
-				0F995BD828B3A18300B62252 /* SignInView.swift */,
-				CE44437128B47E2D00E51A35 /* SignUpView.swift */,
 				0F995BDA28B3A4DC00B62252 /* CustomTextField.swift */,
 				0FC3166328B55F2900F422A4 /* CustomButton.swift */,
 			);
@@ -204,6 +203,15 @@
 				6EFF663228B6751C00385620 /* Extension + Font.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6EFF663528B6779500385620 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0F995BD828B3A18300B62252 /* SignInView.swift */,
+				CE44437128B47E2D00E51A35 /* SignUpView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		803EB34728B28A7600B3236D /* Helpers */ = {
