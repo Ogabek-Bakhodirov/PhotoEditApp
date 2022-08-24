@@ -29,7 +29,7 @@ public class CKPageController: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = Colors.baseBackgroundDark.colors
         view.setTitle("Sign IN", for: .normal)
-//        view.titleLabel?.textColor = Colors.baseTextWhiteColor.colors
+        view.titleLabel?.textColor = Colors.baseTextWhiteColor.colors
         view.titleLabel?.font = .boldSystemFont(ofSize: 30.0)
         view.addTarget(self, action: #selector(signIn), for: .touchUpInside)
 
@@ -40,7 +40,7 @@ public class CKPageController: UIView {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Sign UP", for: .normal)
-//        view.titleLabel?.textColor = Colors.baseTextWhiteColor.colors
+        view.titleLabel?.textColor = Colors.baseTextWhiteColor.colors
         view.backgroundColor = Colors.baseBackgroundDark.colors
         view.addTarget(self, action: #selector(signUp), for: .touchUpInside)
         view.titleLabel?.textColor = .black
