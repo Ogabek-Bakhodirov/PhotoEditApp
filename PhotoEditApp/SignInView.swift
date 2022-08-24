@@ -5,6 +5,7 @@
 
 import UIKit
 import SnapKit
+import ComponentKit
 
 class SignInView: UIView {
     override init(frame: CGRect) {
@@ -30,12 +31,11 @@ class SignInView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = Colors.baseBackgroundDark.colors
         view.clipsToBounds = true
-        view.layer.cornerRadius = 25.0
 
         return view
     }()
 
-    lazy var signInLabel: UIButton = {
+    lazy var signInButton: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Sign In", for: .normal)
@@ -45,40 +45,28 @@ class SignInView: UIView {
         return view
     }()
 
-    lazy var signUpLabel: UIButton = {
+    lazy var signUpButton: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Sign Up", for: .normal)
         view.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
-        view.setTitleColor(Colors.baseTextWhiteColor.colors, for: .normal)
+        view.setTitleColor(Colors.baseTextFieldDarkGray.colors, for: .normal)
 
         return view
     }()
 
-    lazy var emailTextField: CustomTextField = {
-        let view = CustomTextField()
+    lazy var emailTextField: CKTextField = {
+        let view = CKTextField()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Colors.baseTextFieldDarkGray.colors
-        view.textField.textColor = Colors.baseTextWhiteColor.colors
-        view.titleLabel.text = "Email"
-        view.layer.cornerRadius = 15.0
-        view.title = "Email"
-        view.clipsToBounds = true
-        view.textField.placeholder = "Email"
+        view.placeholderText = "Email"
 
         return view
     }()
 
-    lazy var passwordTextField: CustomTextField = {
-        let view = CustomTextField()
+    lazy var passwordTextField: CKTextField = {
+        let view = CKTextField()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Colors.baseTextFieldDarkGray.colors
-        view.textField.textColor = Colors.baseTextWhiteColor.colors
-        view.titleLabel.text = "Password"
-        view.layer.cornerRadius = 15.0
-        view.title = "Password"
-        view.clipsToBounds = true
-        view.textField.placeholder = "Password"
+        view.placeholderText = "Password"
 
         return view
     }()
@@ -109,13 +97,16 @@ class SignInView: UIView {
         return view
     }()
 
-    lazy var nextButton: UIButton = {
-        let view = UIButton()
+    lazy var nextButton: IconTextButton = {
+        let view = IconTextButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("Next >", for: .normal)
+        view.configure(with: IconTextButtonViewModel(
+            text: "Next",
+            image: UIImage(systemName: "chevron.right"),
+            backgroundColor: Colors.basePurple.colors
+        ))
         view.layer.cornerRadius = 24.0
         view.clipsToBounds = true
-        view.backgroundColor = Colors.basePurple.colors
 
         return view
     }()
@@ -123,8 +114,8 @@ class SignInView: UIView {
     private func setupSubViews() {
         addSubview(signInBackgroundImage)
         addSubview(registrView)
-        addSubview(signInLabel)
-        addSubview(signUpLabel)
+        addSubview(signInButton)
+        addSubview(signUpButton)
         addSubview(emailTextField)
         addSubview(passwordTextField)
         addSubview(forgotButton)
@@ -132,80 +123,76 @@ class SignInView: UIView {
         addSubview(googleIcon)
         addSubview(nextButton)
 
-        NSLayoutConstraint.activate([
-            signInBackgroundImage.topAnchor.constraint(equalTo: topAnchor),
-            signInBackgroundImage.rightAnchor.constraint(equalTo: rightAnchor),
-            signInBackgroundImage.leftAnchor.constraint(equalTo: leftAnchor),
-            signInBackgroundImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -300.0),
+        signInBackgroundImage.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(0.65)
+        }
 
-            registrView.topAnchor.constraint(equalTo: topAnchor, constant: 350.0),
-            registrView.rightAnchor.constraint(equalTo: rightAnchor),
-            registrView.leftAnchor.constraint(equalTo: leftAnchor),
-            registrView.bottomAnchor.constraint(equalTo: bottomAnchor),
+        registrView.snp.makeConstraints { make in
+            make.right.left.bottom.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(0.57)
+        }
 
-            signInLabel.topAnchor.constraint(equalTo: registrView.topAnchor, constant: 40.0),
-            signInLabel.leftAnchor.constraint(equalTo: registrView.leftAnchor, constant: 32.0),
-            signInLabel.rightAnchor.constraint(equalTo: signUpLabel.leftAnchor, constant: -24.0),
-            signInLabel.heightAnchor.constraint(equalToConstant: 40.0),
+        signInButton.snp.makeConstraints { make in
+            make.top.equalTo(registrView).inset(40.0)
+            make.left.equalToSuperview().inset(32.0)
+        }
 
-            signUpLabel.topAnchor.constraint(equalTo: registrView.topAnchor, constant: 45.0),
-            signUpLabel.rightAnchor.constraint(equalTo: registrView.rightAnchor, constant: -121.0),
-            signUpLabel.heightAnchor.constraint(equalToConstant: 40.0),
+        signUpButton.snp.makeConstraints { make in
+            make.top.equalTo(registrView).inset(54.0)
+            make.right.equalToSuperview().inset(121.0)
+        }
 
-            emailTextField.topAnchor.constraint(equalTo: registrView.topAnchor, constant: 110.0),
-            emailTextField.rightAnchor.constraint(equalTo: registrView.rightAnchor, constant: -32.0),
-            emailTextField.leftAnchor.constraint(equalTo: registrView.leftAnchor, constant: 32.0),
-            emailTextField.heightAnchor.constraint(equalToConstant: 50.0),
+        emailTextField.snp.makeConstraints { make in
+            make.right.left.equalToSuperview().inset(32.0)
+            make.height.equalTo(50.0)
+            make.top.equalTo(registrView).inset(110.0)
+        }
 
-            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20.0),
-            passwordTextField.rightAnchor.constraint(equalTo: registrView.rightAnchor, constant: -32.0),
-            passwordTextField.leftAnchor.constraint(equalTo: registrView.leftAnchor, constant: 32.0),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 50.0),
+        passwordTextField.snp.makeConstraints { make in
+            make.right.left.equalToSuperview().inset(32.0)
+            make.height.equalTo(50.0)
+            make.top.equalTo(emailTextField.snp_bottomMargin).inset(-20.0)
+        }
 
-            forgotButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 16.0),
-            forgotButton.rightAnchor.constraint(equalTo: registrView.rightAnchor, constant: -32.0),
-            forgotButton.leftAnchor.constraint(equalTo: registrView.leftAnchor, constant: 233.0),
-            forgotButton.widthAnchor.constraint(equalToConstant: 16.0),
+        forgotButton.snp.makeConstraints { make in
+            make.top.equalTo(passwordTextField.snp_bottomMargin).inset(-16.0)
+            make.right.equalToSuperview().inset(32.0)
+            make.left.equalToSuperview().inset(233.0)
+            make.height.equalTo(16.0)
+        }
 
-            appleIcon.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 156.0),
-            appleIcon.leftAnchor.constraint(equalTo: registrView.leftAnchor, constant: 32.0),
-            appleIcon.rightAnchor.constraint(equalTo: googleIcon.leftAnchor, constant: -20.0),
-            appleIcon.widthAnchor.constraint(equalToConstant: 50.0),
-            appleIcon.heightAnchor.constraint(equalToConstant: 70.0),
-            appleIcon.bottomAnchor.constraint(equalTo: registrView.bottomAnchor, constant: -32.0),
+        appleIcon.snp.makeConstraints { make in
+            make.bottom.equalTo(-32.0)
+            make.left.equalTo(32.0)
+            make.width.height.equalTo(50.0)
+        }
 
-            googleIcon.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 156.0),
-            googleIcon.rightAnchor.constraint(equalTo: nextButton.leftAnchor, constant: -83.0),
-            googleIcon.widthAnchor.constraint(equalToConstant: 50.0),
-            googleIcon.heightAnchor.constraint(equalToConstant: 70.0),
-            googleIcon.bottomAnchor.constraint(equalTo: registrView.bottomAnchor, constant: -32.0),
+        googleIcon.snp.makeConstraints { make in
+            make.bottom.equalTo(-32.0)
+            make.left.equalTo(appleIcon.snp_rightMargin).inset(-20.0)
+            make.width.height.equalTo(50.0)
+        }
 
-            nextButton.topAnchor.constraint(equalTo: forgotButton.bottomAnchor, constant: 124.0),
-            nextButton.rightAnchor.constraint(equalTo: registrView.rightAnchor, constant: -32.0),
-            nextButton.widthAnchor.constraint(equalToConstant: 108.0),
-            nextButton.heightAnchor.constraint(equalToConstant: 50.0),
-            nextButton.bottomAnchor.constraint(equalTo: registrView.bottomAnchor, constant: -32.0),
+        nextButton.snp.makeConstraints { make in
+            make.bottom.equalTo(-32.0)
+            make.right.equalTo(-32.0)
+            make.left.equalTo(googleIcon.snp_rightMargin).inset(-83.0)
+            make.height.equalTo(50.0)
+        }
+    }
+}
 
-        ])
+extension UIView {
+    func roundCornerView(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(
+            roundedRect: bounds,
+            byRoundingCorners: corners,
+            cornerRadii: .init(width: radius, height: radius)
+        )
 
-//        signInBackgroundImage.snp.makeConstraints { make in
-//            make.centerX.self
-//            make.centerY.self
-//        }
-//
-//        registrView.snp.makeConstraints { make in
-//            make.topMargin.equalTo(300)
-//            make.height.equalTo(500)
-//            make.width.equalTo(375)
-//            make.bottomMargin.equalTo(0)
-//        }
-//
-//        signInLabel.snp.makeConstraints { make in
-//
-//            make.top.equalTo(registrView).offset(10.0)
-//            make.right.equalTo(registrView).offset(20.0)
-//            make.height.equalTo(20.0)
-//            make.width.equalTo(30.0)
-//        }
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
     }
 }
