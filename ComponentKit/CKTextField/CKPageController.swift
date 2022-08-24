@@ -4,8 +4,27 @@
 //
 
 import UIKit
+import SnapKit
 
 public class CKPageController: UIView {
+    public var titles: [String] = [] {
+        didSet {
+            populateViews()
+        }
+    }
+
+    lazy var stacks: [UIView] = []
+
+    lazy var contentStack: UIStackView = {
+        let view = UIStackView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = Colors.baseBackgroundDark.colors
+        view.axis = .horizontal
+        view.distribution = .fillEqually
+
+        return view
+    }()
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubview()
@@ -16,111 +35,75 @@ public class CKPageController: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    lazy var animateView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .red
-
-        return view
-    }()
-
-    lazy var firstButton: UIButton = {
-        let view = UIButton()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Colors.baseBackgroundDark.colors
-        view.setTitle("Sign IN", for: .normal)
-        view.titleLabel?.textColor = Colors.baseTextWhiteColor.colors
-        view.titleLabel?.font = .boldSystemFont(ofSize: 30.0)
-        view.addTarget(self, action: #selector(signIn), for: .touchUpInside)
-
-        return view
-    }()
-
-    lazy var secondButton: UIButton = {
-        let view = UIButton()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("Sign UP", for: .normal)
-        view.titleLabel?.textColor = Colors.baseTextWhiteColor.colors
-        view.backgroundColor = Colors.baseBackgroundDark.colors
-        view.addTarget(self, action: #selector(signUp), for: .touchUpInside)
-        view.titleLabel?.textColor = .black
-
-        return view
-    }()
-
-    lazy var stack: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [firstButton, secondButton])
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.axis = .horizontal
-        view.distribution = .fillEqually
-
-        return view
-    }()
-
-    lazy var line1View: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Colors.basePurple.colors
-
-        return view
-    }()
-
-    lazy var line2View: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Colors.baseBackgroundDark.colors
-
-        return view
-    }()
-
-    lazy var lineStack: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [line1View, line2View])
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.axis = .horizontal
-//        view.spacing = 40.0
-//        view.distribution = .fillEqually
-
-        return view
-    }()
-
-    lazy var contentStack: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [stack, lineStack])
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Colors.baseBackgroundDark.colors
-        view.axis = .vertical
-
-        return view
-    }()
-
-    @objc func signIn() {
-        line1View.backgroundColor = Colors.basePurple.colors
-        line2View.backgroundColor = Colors.baseBackgroundDark.colors
-        firstButton.titleLabel?.font = .boldSystemFont(ofSize: 30.0)
-        secondButton.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .medium)
-    }
-
-    @objc func signUp() {
-        line2View.backgroundColor = Colors.basePurple.colors
-        line1View.backgroundColor = Colors.baseBackgroundDark.colors
-        secondButton.titleLabel?.font = .boldSystemFont(ofSize: 30.0)
-        firstButton.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .medium)
-    }
-
     func setupSubview() {
         addSubview(contentStack)
 
-        NSLayoutConstraint.activate([
-            contentStack.topAnchor.constraint(equalTo: topAnchor),
-            contentStack.leftAnchor.constraint(equalTo: leftAnchor),
-            contentStack.rightAnchor.constraint(equalTo: rightAnchor),
-            contentStack.bottomAnchor.constraint(equalTo: bottomAnchor),
+        contentStack.snp.makeConstraints { make in
+            make.left.right.top.bottom.equalToSuperview()
+        }
 
-            line1View.widthAnchor.constraint(equalTo: lineStack.widthAnchor, multiplier: 0.2),
-            line1View.leftAnchor.constraint(equalTo: lineStack.leftAnchor, constant: 10.0),
-            line2View.widthAnchor.constraint(equalTo: lineStack.widthAnchor, multiplier: 0.2),
-            line2View.rightAnchor.constraint(equalTo: lineStack.rightAnchor, constant: -100.0),
+        populateViews()
+    }
 
-            stack.heightAnchor.constraint(equalTo: contentStack.heightAnchor, multiplier: 0.9)
-        ])
+    private func populateViews() {
+        contentStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
+
+        titles.forEach { title in
+            let buttonStack = makeButtonStack(title: title)
+            contentStack.addSubview(buttonStack)
+        }
+    }
+}
+
+// MARK: - Generate Views
+
+extension CKPageController {
+    private func makeButtonStack(title: String) -> UIView {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = Colors.baseBackgroundDark.colors
+        button.setTitle(title, for: .normal)
+        button.titleLabel?.textColor = Colors.baseTextWhiteColor.colors
+        button.titleLabel?.font = .boldSystemFont(ofSize: 30.0)
+        button.snp.makeConstraints { make in
+            make.height.equalTo(40.0)
+        }
+
+        let lineView = UIView()
+        lineView.translatesAutoresizingMaskIntoConstraints = false
+        lineView.backgroundColor = Colors.basePurple.colors
+        lineView.snp.makeConstraints { make in
+            make.height.equalTo(4.0)
+            make.width.equalTo(27.0)
+        }
+
+        let stackView = UIStackView(arrangedSubviews: [button, lineView])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 3.0
+        stackView.distribution = .fill
+        stackView.alignment = .leading
+        stackView.addSubview(button)
+        stackView.addSubview(lineView)
+
+        return stackView
+    }
+}
+
+// MARK: - Controller logic
+
+extension CKPageController {
+    @objc func signIn() {
+//        line1View.backgroundColor = Colors.basePurple.colors
+//        line2View.backgroundColor = Colors.baseBackgroundDark.colors
+//        firstButton.titleLabel?.font = .boldSystemFont(ofSize: 30.0)
+//        secondButton.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .medium)
+    }
+
+    @objc func signUp() {
+//        line2View.backgroundColor = Colors.basePurple.colors
+//        line1View.backgroundColor = Colors.baseBackgroundDark.colors
+//        secondButton.titleLabel?.font = .boldSystemFont(ofSize: 30.0)
+//        firstButton.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .medium)
     }
 }

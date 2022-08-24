@@ -9,6 +9,7 @@ import SnapKit
 class SignInViewController: UIViewController {
     lazy var signInView: SignInView = {
         let view = SignInView()
+
         return view
     }()
 

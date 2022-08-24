@@ -38,6 +38,7 @@ class SignInView: UIView {
     lazy var topView: CKPageController = {
         let view = CKPageController()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.titles = ["Sign In", "Sign Up", "As a Host"]
 
         return view
     }()
@@ -145,8 +146,7 @@ class SignInView: UIView {
         topView.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(32.0)
             make.top.equalTo(registrView).inset(40.0)
-            make.right.equalToSuperview().inset(121.0)
-            make.height.equalTo(43.0)
+            make.right.equalToSuperview().inset(32)
         }
 
 //        signInButton.snp.makeConstraints { make in

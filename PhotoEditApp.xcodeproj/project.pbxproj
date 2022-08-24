@@ -23,6 +23,7 @@
 		6EFF663428B6769600385620 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EB34828B28A9900B3236D /* Colors.swift */; };
 		6EFF663628B677C700385620 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F995BDA28B3A4DC00B62252 /* CustomTextField.swift */; };
 		6EFF663728B677C700385620 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC3166328B55F2900F422A4 /* CustomButton.swift */; };
+		6EFF663A28B67F6700385620 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6EFF663928B67F6700385620 /* SnapKit */; };
 		CE44437028B47BC400E51A35 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44436F28B47BC400E51A35 /* SignUpViewController.swift */; };
 		CE44437228B47E2D00E51A35 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44437128B47E2D00E51A35 /* SignUpView.swift */; };
 		CE44438628B494F600E51A35 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE44437A28B494F600E51A35 /* Montserrat-Medium.ttf */; };
@@ -119,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EFF663A28B67F6700385620 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +148,7 @@
 				6E10F18328B1E09800FAD4DC /* PhotoEditApp */,
 				6E10F19A28B1E09900FAD4DC /* PhotoEditAppTests */,
 				6E10F18228B1E09800FAD4DC /* Products */,
+				6EFF663828B67F6700385620 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +215,13 @@
 				CE44437128B47E2D00E51A35 /* SignUpView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		6EFF663828B67F6700385620 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		803EB34728B28A7600B3236D /* Helpers */ = {
@@ -315,6 +325,9 @@
 			dependencies = (
 			);
 			name = ComponentKit;
+			packageProductDependencies = (
+				6EFF663928B67F6700385620 /* SnapKit */,
+			);
 			productName = ComponentKit;
 			productReference = 6E161BD828B2946100D15F0F /* ComponentKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -808,6 +821,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6EFF663928B67F6700385620 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE90B73528B337A500D2481C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		CE90B73628B337A500D2481C /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE90B73528B337A500D2481C /* XCRemoteSwiftPackageReference "SnapKit" */;
