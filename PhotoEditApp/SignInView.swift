@@ -35,8 +35,8 @@ class SignInView: UIView {
         return view
     }()
 
-    lazy var topView: topView = {
-        let view = PhotoEditApp.topView()
+    lazy var topView: CKPageController = {
+        let view = CKPageController()
         view.translatesAutoresizingMaskIntoConstraints = false
 
         return view

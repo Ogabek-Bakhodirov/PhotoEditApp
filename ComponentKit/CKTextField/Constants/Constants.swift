@@ -5,14 +5,14 @@
 
 import UIKit
 
-enum Images {
+public enum Images {
     case ic_apple
     case ic_eyeSlash
     case ic_google
     case RegistrationPageImage
     case workspaceBackground
 
-    var images: UIImage? {
+    public var images: UIImage? {
         switch self {
         case .ic_apple: return UIImage(named: "ic_apple")
         case .ic_eyeSlash: return UIImage(named: "ic_eyeSlash")
@@ -23,7 +23,7 @@ enum Images {
     }
 }
 
-enum Colors {
+public enum Colors {
     case baseBackgroundDark
     case basePurple
     case baseTextFieldDarkGray
@@ -59,9 +59,6 @@ enum Icons {
     case squarStack
     case text
     case menuGrid
-    // shadow
-    // opacity
-    // graphic
 
     var icons: UIImage? {
         switch self {

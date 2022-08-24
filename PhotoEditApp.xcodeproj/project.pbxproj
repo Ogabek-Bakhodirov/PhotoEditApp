@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F59A47828B65FBB004CAB97 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F59A47728B65FBB004CAB97 /* TopView.swift */; };
 		0F995BD928B3A18300B62252 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F995BD828B3A18300B62252 /* SignInView.swift */; };
 		0F995BDB28B3A4DC00B62252 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F995BDA28B3A4DC00B62252 /* CustomTextField.swift */; };
 		0FC3166228B5376200F422A4 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC3166128B5376200F422A4 /* SignInViewController.swift */; };
@@ -20,6 +19,7 @@
 		6E10F19C28B1E09900FAD4DC /* PhotoEditAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10F19B28B1E09900FAD4DC /* PhotoEditAppTests.swift */; };
 		6E161BED28B2946100D15F0F /* ComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E161BD828B2946100D15F0F /* ComponentKit.framework */; };
 		6E161BEE28B2946100D15F0F /* ComponentKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E161BD828B2946100D15F0F /* ComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6EFF662D28B672EA00385620 /* CKPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F59A47728B65FBB004CAB97 /* CKPageController.swift */; };
 		803EB34928B28A9900B3236D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EB34828B28A9900B3236D /* Constants.swift */; };
 		CE44437028B47BC400E51A35 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44436F28B47BC400E51A35 /* SignUpViewController.swift */; };
 		CE44437228B47E2D00E51A35 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44437128B47E2D00E51A35 /* SignUpView.swift */; };
@@ -66,7 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0F59A47728B65FBB004CAB97 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		0F59A47728B65FBB004CAB97 /* CKPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKPageController.swift; sourceTree = "<group>"; };
 		0F995BD828B3A18300B62252 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		0F995BDA28B3A4DC00B62252 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		0FC3166128B5376200F422A4 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +124,10 @@
 		6E087C5F28B4562E00DA4BF9 /* CKTextField */ = {
 			isa = PBXGroup;
 			children = (
+				6EFF662E28B6736100385620 /* Source */,
+				803EB34728B28A7600B3236D /* Constants */,
+				CE44437528B494F600E51A35 /* CustomFonts */,
+				0F59A47728B65FBB004CAB97 /* CKPageController.swift */,
 				6E087C6028B4562E00DA4BF9 /* CKTextField.swift */,
 			);
 			path = CKTextField;
@@ -152,20 +156,17 @@
 		6E10F18328B1E09800FAD4DC /* PhotoEditApp */ = {
 			isa = PBXGroup;
 			children = (
-				CE44437528B494F600E51A35 /* CustomFonts */,
 				6E10F18428B1E09800FAD4DC /* AppDelegate.swift */,
 				6E10F18828B1E09800FAD4DC /* ViewController.swift */,
 				CE44436F28B47BC400E51A35 /* SignUpViewController.swift */,
 				0FC3166128B5376200F422A4 /* SignInViewController.swift */,
 				6E10F18D28B1E09900FAD4DC /* Assets.xcassets */,
 				6E10F18F28B1E09900FAD4DC /* LaunchScreen.storyboard */,
-				803EB34728B28A7600B3236D /* Constants */,
 				6E10F19228B1E09900FAD4DC /* Info.plist */,
 				0F995BD828B3A18300B62252 /* SignInView.swift */,
 				CE44437128B47E2D00E51A35 /* SignUpView.swift */,
 				0F995BDA28B3A4DC00B62252 /* CustomTextField.swift */,
 				0FC3166328B55F2900F422A4 /* CustomButton.swift */,
-				0F59A47728B65FBB004CAB97 /* TopView.swift */,
 			);
 			path = PhotoEditApp;
 			sourceTree = "<group>";
@@ -184,6 +185,13 @@
 				6E087C5F28B4562E00DA4BF9 /* CKTextField */,
 			);
 			path = ComponentKit;
+			sourceTree = "<group>";
+		};
+		6EFF662E28B6736100385620 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		803EB34728B28A7600B3236D /* Constants */ = {
@@ -400,7 +408,6 @@
 				6E10F18528B1E09800FAD4DC /* AppDelegate.swift in Sources */,
 				CE44437228B47E2D00E51A35 /* SignUpView.swift in Sources */,
 				0FC3166228B5376200F422A4 /* SignInViewController.swift in Sources */,
-				0F59A47828B65FBB004CAB97 /* TopView.swift in Sources */,
 				0F995BD928B3A18300B62252 /* SignInView.swift in Sources */,
 				803EB34928B28A9900B3236D /* Constants.swift in Sources */,
 				0F995BDB28B3A4DC00B62252 /* CustomTextField.swift in Sources */,
@@ -419,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EFF662D28B672EA00385620 /* CKPageController.swift in Sources */,
 				6E087C6128B4562E00DA4BF9 /* CKTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

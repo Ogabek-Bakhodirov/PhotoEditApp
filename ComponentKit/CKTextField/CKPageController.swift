@@ -4,10 +4,9 @@
 //
 
 import UIKit
-import ComponentKit
 
-class topView: UIView {
-    override init(frame: CGRect) {
+public class CKPageController: UIView {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubview()
     }
@@ -28,9 +27,9 @@ class topView: UIView {
     lazy var firstButton: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Colors.baseBackgroundDark.colors
+//        view.backgroundColor = Colors.baseBackgroundDark.colors
         view.setTitle("Sign IN", for: .normal)
-        view.titleLabel?.textColor = Colors.baseTextWhiteColor.colors
+//        view.titleLabel?.textColor = Colors.baseTextWhiteColor.colors
         view.titleLabel?.font = .boldSystemFont(ofSize: 30.0)
         view.addTarget(self, action: #selector(signIn), for: .touchUpInside)
 
@@ -41,8 +40,8 @@ class topView: UIView {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Sign UP", for: .normal)
-        view.titleLabel?.textColor = Colors.baseTextWhiteColor.colors
-        view.backgroundColor = Colors.baseBackgroundDark.colors
+//        view.titleLabel?.textColor = Colors.baseTextWhiteColor.colors
+//        view.backgroundColor = Colors.baseBackgroundDark.colors
         view.addTarget(self, action: #selector(signUp), for: .touchUpInside)
         view.titleLabel?.textColor = .black
 
@@ -61,7 +60,7 @@ class topView: UIView {
     lazy var line1View: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Colors.basePurple.colors
+//        view.backgroundColor = Colors.basePurple.colors
 
         return view
     }()
@@ -69,7 +68,7 @@ class topView: UIView {
     lazy var line2View: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Colors.baseBackgroundDark.colors
+//        view.backgroundColor = Colors.baseBackgroundDark.colors
 
         return view
     }()
@@ -87,22 +86,22 @@ class topView: UIView {
     lazy var contentStack: UIStackView = {
         let view = UIStackView(arrangedSubviews: [stack, lineStack])
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Colors.baseBackgroundDark.colors
+//        view.backgroundColor = Colors.baseBackgroundDark.colors
         view.axis = .vertical
 
         return view
     }()
 
     @objc func signIn() {
-        line1View.backgroundColor = Colors.basePurple.colors
-        line2View.backgroundColor = Colors.baseBackgroundDark.colors
+//        line1View.backgroundColor = Colors.basePurple.colors
+//        line2View.backgroundColor = Colors.baseBackgroundDark.colors
         firstButton.titleLabel?.font = .boldSystemFont(ofSize: 30.0)
         secondButton.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .medium)
     }
 
     @objc func signUp() {
-        line2View.backgroundColor = Colors.basePurple.colors
-        line1View.backgroundColor = Colors.baseBackgroundDark.colors
+//        line2View.backgroundColor = Colors.basePurple.colors
+//        line1View.backgroundColor = Colors.baseBackgroundDark.colors
         secondButton.titleLabel?.font = .boldSystemFont(ofSize: 30.0)
         firstButton.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .medium)
     }
