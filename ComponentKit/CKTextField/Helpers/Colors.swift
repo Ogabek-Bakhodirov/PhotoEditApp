@@ -11,7 +11,7 @@ public enum Colors {
     case baseTextFieldDarkGray
     case baseTextWhiteColor
 
-    var colors: UIColor? {
+    public var colors: UIColor? {
         switch self {
         case .baseBackgroundDark: return UIColor(named: "baseBackgroundDark")
         case .basePurple: return UIColor(named: "basePurple")
