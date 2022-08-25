@@ -10,7 +10,7 @@ import ComponentKit
 class SignUpView: UIView {
     private lazy var backgroundImage: UIImageView = {
         var view = UIImageView()
-        view.image = Images.RegistrationPageImage.images
+        view.image = Images.im_registration_page_image.images
         view.contentMode = .scaleToFill
         return view
     }()

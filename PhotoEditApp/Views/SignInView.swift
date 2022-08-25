@@ -11,7 +11,7 @@ class SignInView: UIView {
     lazy var signInBackgroundImage: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = Images.RegistrationPageImage.images
+        view.image = Images.im_registration_page_image.images
 
         return view
     }()
