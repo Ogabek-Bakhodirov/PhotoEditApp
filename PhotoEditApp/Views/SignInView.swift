@@ -11,7 +11,7 @@ class SignInView: UIView {
     lazy var signInBackgroundImage: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = Images.im_registration_page_image.images
+        view.image = Images.im_registration_page_image.image
 
         return view
     }()
@@ -19,7 +19,7 @@ class SignInView: UIView {
     lazy var registrView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Colors.baseBackgroundDark.colors
+        view.backgroundColor = Colors.base_background_dark.color
         view.clipsToBounds = true
 
         return view
@@ -54,7 +54,7 @@ class SignInView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Forgot Password", for: .normal)
         view.titleLabel?.font = .systemFont(ofSize: 13.0)
-        view.setTitleColor(Colors.basePurple.colors, for: .normal)
+        view.setTitleColor(Colors.base_purple.color, for: .normal)
 
         return view
     }()
@@ -62,7 +62,7 @@ class SignInView: UIView {
     lazy var appleIcon: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setImage(Images.ic_apple.images, for: .normal)
+        view.setImage(Images.ic_apple.image, for: .normal)
 
         return view
     }()
@@ -70,7 +70,7 @@ class SignInView: UIView {
     lazy var googleIcon: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setImage(Images.ic_google.images, for: .normal)
+        view.setImage(Images.ic_google.image, for: .normal)
 
         return view
     }()
@@ -81,7 +81,7 @@ class SignInView: UIView {
         view.configure(with: CKContentActionButtonViewModel(
             text: "Next",
             image: UIImage(systemName: "chevron.right"),
-            backgroundColor: Colors.basePurple.colors
+            backgroundColor: Colors.base_purple.color
         ))
         view.layer.cornerRadius = 24.0
         view.clipsToBounds = true

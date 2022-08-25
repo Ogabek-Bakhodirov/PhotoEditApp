@@ -6,11 +6,11 @@
 import UIKit
 
 public enum Images {
+    case im_registration_page_image
+    case im_workspace_background
     case ic_apple
     case ic_eyeSlash
     case ic_google
-    case im_registration_page_image
-    case im_workspace_background
     case ic_user
     case ic_filter_parametr
     case ic_xMark
@@ -31,13 +31,13 @@ public enum Images {
     case ic_text
     case ic_menu_grid
 
-    public var images: UIImage? {
+    public var image: UIImage? {
         switch self {
+        case .im_registration_page_image: return UIImage(named: "RegistrationPageImage")
+        case .im_workspace_background: return UIImage(named: "workspaceBackground")
         case .ic_apple: return UIImage(named: "ic_apple")
         case .ic_eyeSlash: return UIImage(named: "ic_eyeSlash")
         case .ic_google: return UIImage(named: "ic_google")
-        case .im_registration_page_image: return UIImage(named: "RegistrationPageImage")
-        case .im_workspace_background: return UIImage(named: "workspaceBackground")
         case .ic_user: return UIImage(systemName: "person")
         case .ic_filter_parametr: return UIImage(systemName: "slider.horizontal.3")
         case .ic_xMark: return UIImage(systemName: "xmark")

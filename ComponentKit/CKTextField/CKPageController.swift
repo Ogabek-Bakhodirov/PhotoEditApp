@@ -18,7 +18,7 @@ public class CKPageController: UIView {
     lazy var contentStack: UIStackView = {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Colors.baseBackgroundDark.colors
+        view.backgroundColor = Colors.base_background_dark.color
         view.axis = .horizontal
         view.distribution = .fillEqually
 
@@ -61,9 +61,9 @@ extension CKPageController {
     private func makeButtonStack(title: String) -> UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = Colors.baseBackgroundDark.colors
+        button.backgroundColor = Colors.base_background_dark.color
         button.setTitle(title, for: .normal)
-        button.titleLabel?.textColor = Colors.baseTextWhiteColor.colors
+        button.titleLabel?.textColor = Colors.base_text_white_color.color
         button.titleLabel?.font = .boldSystemFont(ofSize: 30.0)
         button.snp.makeConstraints { make in
             make.height.equalTo(40.0)
@@ -71,7 +71,7 @@ extension CKPageController {
 
         let lineView = UIView()
         lineView.translatesAutoresizingMaskIntoConstraints = false
-        lineView.backgroundColor = Colors.basePurple.colors
+        lineView.backgroundColor = Colors.base_purple.color
         lineView.snp.makeConstraints { make in
             make.height.equalTo(4.0)
             make.width.equalTo(27.0)
