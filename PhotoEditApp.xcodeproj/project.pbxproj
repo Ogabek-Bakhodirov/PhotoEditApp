@@ -141,6 +141,20 @@
 			path = CKTextField;
 			sourceTree = "<group>";
 		};
+		6E0F684E28B7CD170078F76E /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		6E0F684F28B7CD240078F76E /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		6E10F17828B1E09800FAD4DC = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +225,8 @@
 		6EFF663528B6779500385620 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6E0F684F28B7CD240078F76E /* CollectionViewCell */,
+				6E0F684E28B7CD170078F76E /* TableViewCell */,
 				0F995BD828B3A18300B62252 /* SignInView.swift */,
 				CE44437128B47E2D00E51A35 /* SignUpView.swift */,
 			);
