@@ -8,16 +8,6 @@ import SnapKit
 import ComponentKit
 
 class SignInView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupSubViews()
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     lazy var signInBackgroundImage: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -42,27 +32,6 @@ class SignInView: UIView {
 
         return view
     }()
-
-//
-//    lazy var signInButton: UIButton = {
-//        let view = UIButton()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.setTitle("Sign In", for: .normal)
-//        view.titleLabel?.font = UIFont.boldSystemFont(ofSize: 32.0)
-//        view.setTitleColor(Colors.baseTextWhiteColor.colors, for: .normal)
-//
-//        return view
-//    }()
-//
-//    lazy var signUpButton: UIButton = {
-//        let view = UIButton()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.setTitle("Sign Up", for: .normal)
-//        view.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
-//        view.setTitleColor(Colors.baseTextFieldDarkGray.colors, for: .normal)
-//
-//        return view
-//    }()
 
     lazy var emailTextField: CKTextField = {
         let view = CKTextField()
@@ -120,12 +89,20 @@ class SignInView: UIView {
         return view
     }()
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupSubViews()
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     private func setupSubViews() {
         addSubview(signInBackgroundImage)
         addSubview(registrView)
         addSubview(topView)
-//        addSubview(signInButton)
-//        addSubview(signUpButton)
         addSubview(emailTextField)
         addSubview(passwordTextField)
         addSubview(forgotButton)
@@ -148,16 +125,6 @@ class SignInView: UIView {
             make.top.equalTo(registrView).inset(40.0)
             make.right.equalToSuperview().inset(32)
         }
-
-//        signInButton.snp.makeConstraints { make in
-//            make.top.equalTo(registrView).inset(40.0)
-//            make.left.equalToSuperview().inset(32.0)
-//        }
-//
-//        signUpButton.snp.makeConstraints { make in
-//            make.top.equalTo(registrView).inset(54.0)
-//            make.right.equalToSuperview().inset(121.0)
-//        }
 
         emailTextField.snp.makeConstraints { make in
             make.right.left.equalToSuperview().inset(32.0)
