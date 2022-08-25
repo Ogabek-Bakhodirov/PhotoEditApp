@@ -10,14 +10,14 @@ import ComponentKit
 class SignUpView: UIView {
     private lazy var backgroundImage: UIImageView = {
         var view = UIImageView()
-        view.image = Images.RegistrationPageImage.images
+        view.image = Images.im_registration_page_image.image
         view.contentMode = .scaleToFill
         return view
     }()
 
     private lazy var bottomView: UIView = {
         var view = UIView()
-        view.backgroundColor = Colors.baseBackgroundDark.colors
+        view.backgroundColor = Colors.base_background_dark.color
         view.clipsToBounds = true
         view.layer.cornerRadius = 40
         return view
@@ -36,7 +36,7 @@ class SignUpView: UIView {
         view.backgroundColor = .clear
         view.setTitle("Sign In", for: .normal)
         view.titleLabel?.font = .montserratMedium(size: 20)
-        view.setTitleColor(Colors.baseTextFieldDarkGray.colors, for: .normal)
+        view.setTitleColor(Colors.base_text_field_dark_gray.color, for: .normal)
         return view
     }()
 
@@ -45,13 +45,13 @@ class SignUpView: UIView {
         view.backgroundColor = .clear
         view.setTitle("Sign Up", for: .normal)
         view.titleLabel?.font = .montserratBold(size: 32)
-        view.setTitleColor(Colors.baseTextWhiteColor.colors, for: .normal)
+        view.setTitleColor(Colors.base_text_white_color.color, for: .normal)
         return view
     }()
 
     lazy var purpleLine: UIView = {
         var view = UIView()
-        view.backgroundColor = Colors.basePurple.colors
+        view.backgroundColor = Colors.base_purple.color
         return view
     }()
 
@@ -91,23 +91,23 @@ class SignUpView: UIView {
 
     lazy var appleButton: UIButton = {
         var view = UIButton()
-        view.setImage(Images.ic_apple.images, for: .normal)
+        view.setImage(Images.ic_apple.image, for: .normal)
         return view
     }()
 
     lazy var googleButton: UIButton = {
         var view = UIButton()
-        view.setImage(Images.ic_google.images, for: .normal)
+        view.setImage(Images.ic_google.image, for: .normal)
 
         return view
     }()
 
     lazy var nextButton: UIButton = {
         var view = UIButton()
-        view.backgroundColor = Colors.basePurple.colors
+        view.backgroundColor = Colors.base_purple.color
         view.setTitle("Next >", for: .normal)
         view.titleLabel?.font = .montserratMedium(size: 20)
-        view.setTitleColor(Colors.baseTextWhiteColor.colors, for: .normal)
+        view.setTitleColor(Colors.base_text_white_color.color, for: .normal)
         view.clipsToBounds = true
         view.layer.cornerRadius = 25
         return view
