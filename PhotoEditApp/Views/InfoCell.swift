@@ -11,10 +11,12 @@ class InfoCell: UICollectionViewCell {
     lazy var backView: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.base_background_dark.color
+//        view.clipsToBounds = true
+//        view.layer.cornerRadius = 10.0
         view.layer.shadowColor = UIColor.white.cgColor
-        view.layer.shadowOpacity = 0.8
+        view.layer.shadowOpacity = 1.0
         view.layer.shadowOffset = CGSize.zero
-        view.layer.shadowRadius = 1
+        view.layer.shadowRadius = 2.0
 
         return view
     }()
