@@ -29,6 +29,9 @@ class SignInView: UIView {
         let view = CKPageController()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.titles = ["Sign In", "Sign Up"]
+        view.onChanged = { index in
+
+        }
 
         return view
     }()
