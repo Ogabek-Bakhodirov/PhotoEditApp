@@ -11,6 +11,4 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .red
     }
-
-    // YOU can delete this line(16-33)  i just showing how to use Snapkit
 }
