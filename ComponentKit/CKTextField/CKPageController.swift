@@ -7,23 +7,30 @@ import UIKit
 import SnapKit
 
 public class CKPageController: UIView {
+    public var onChanged: ((Int) -> Void)?
     public var titles: [String] = [] {
         didSet {
             populateViews()
         }
     }
 
-    lazy var stacks: [UIView] = []
-
     lazy var contentStack: UIStackView = {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = Colors.base_background_dark.color
         view.axis = .horizontal
-        view.distribution = .fillEqually
+        view.distribution = .fill
+        view.spacing = 24.0
 
         return view
     }()
+
+    private var stacks: [UIStackView] = []
+    private var selectedTitleId: Int = 0 {
+        didSet {
+            didSelectTitle()
+        }
+    }
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,30 +48,31 @@ public class CKPageController: UIView {
         contentStack.snp.makeConstraints { make in
             make.left.right.top.bottom.equalToSuperview()
         }
-
-        populateViews()
     }
 
     private func populateViews() {
         contentStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        stacks = []
 
-        titles.forEach { title in
-            let buttonStack = makeButtonStack(title: title)
-            contentStack.addSubview(buttonStack)
+        titles.enumerated().forEach { index, title in
+            let buttonStack = makeButtonStack(title: title, index: index, isSelected: selectedTitleId == index)
+            contentStack.addArrangedSubview(buttonStack)
+            stacks.append(buttonStack)
         }
+        contentStack.addArrangedSubview(UIView())
     }
 }
 
 // MARK: - Generate Views
 
 extension CKPageController {
-    private func makeButtonStack(title: String) -> UIView {
+    private func makeButtonStack(title: String, index: Int, isSelected: Bool) -> UIStackView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = Colors.base_background_dark.color
         button.setTitle(title, for: .normal)
-        button.titleLabel?.textColor = Colors.base_text_white_color.color
-        button.titleLabel?.font = .boldSystemFont(ofSize: 30.0)
+        button.backgroundColor = .clear
+        button.tag = index
+        button.addTarget(self, action: #selector(touchUpInside(button:)), for: .touchUpInside)
         button.snp.makeConstraints { make in
             make.height.equalTo(40.0)
         }
@@ -77,33 +85,52 @@ extension CKPageController {
             make.width.equalTo(27.0)
         }
 
-        let stackView = UIStackView(arrangedSubviews: [button, lineView])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 3.0
-        stackView.distribution = .fill
-        stackView.alignment = .leading
-        stackView.addSubview(button)
-        stackView.addSubview(lineView)
+        makeSelectedStyle(for: button, lineView: lineView, isSelected: isSelected)
+
+        let stackView = makeStackView(arrangedSubviews: [button, lineView])
 
         return stackView
+    }
+
+    private func makeStackView(arrangedSubviews: [UIView]) -> UIStackView {
+        let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .leading
+
+        return stackView
+    }
+
+    private func makeSelectedStyle(for button: UIButton, lineView: UIView, isSelected: Bool) {
+        if isSelected {
+            button.setTitleColor(Colors.base_text_white_color.color, for: .normal)
+            button.titleLabel?.font = .montserratBold(size: 32)
+            button.titleLabel?.minimumScaleFactor = 12.0
+        } else {
+            button.setTitleColor(Colors.base_text_field_dark_gray.color, for: .normal)
+            button.titleLabel?.font = .montserratMedium(size: 20)
+            button.titleLabel?.minimumScaleFactor = 12.0
+        }
+        lineView.isHidden = !isSelected
     }
 }
 
 // MARK: - Controller logic
 
 extension CKPageController {
-    @objc func signIn() {
-//        line1View.backgroundColor = Colors.basePurple.colors
-//        line2View.backgroundColor = Colors.baseBackgroundDark.colors
-//        firstButton.titleLabel?.font = .boldSystemFont(ofSize: 30.0)
-//        secondButton.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .medium)
+    func didSelectTitle() {
+        stacks.forEach { stack in
+            guard let button = stack.arrangedSubviews.first as? UIButton,
+                  let lineView = stack.arrangedSubviews.last else {
+                return
+            }
+            makeSelectedStyle(for: button, lineView: lineView, isSelected: button.tag == selectedTitleId)
+        }
     }
 
-    @objc func signUp() {
-//        line2View.backgroundColor = Colors.basePurple.colors
-//        line1View.backgroundColor = Colors.baseBackgroundDark.colors
-//        secondButton.titleLabel?.font = .boldSystemFont(ofSize: 30.0)
-//        firstButton.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .medium)
+    @objc func touchUpInside(button: UIButton) {
+        selectedTitleId = button.tag
+        onChanged?(selectedTitleId)
     }
 }

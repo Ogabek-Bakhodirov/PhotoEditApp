@@ -25,10 +25,10 @@ class SignInView: UIView {
         return view
     }()
 
-    lazy var topView: CKPageController = {
+    lazy var pageController: CKPageController = {
         let view = CKPageController()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.titles = ["Sign In", "Sign Up", "As a Host"]
+        view.titles = ["Sign In", "Sign Up"]
 
         return view
     }()
@@ -102,7 +102,7 @@ class SignInView: UIView {
     private func setupSubViews() {
         addSubview(signInBackgroundImage)
         addSubview(registrView)
-        addSubview(topView)
+        addSubview(pageController)
         addSubview(emailTextField)
         addSubview(passwordTextField)
         addSubview(forgotButton)
@@ -120,9 +120,9 @@ class SignInView: UIView {
             make.height.equalToSuperview().multipliedBy(0.57)
         }
 
-        topView.snp.makeConstraints { make in
+        pageController.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(32.0)
-            make.top.equalTo(registrView).inset(40.0)
+            make.top.equalTo(registrView.snp_topMargin).inset(40.0)
             make.right.equalToSuperview().inset(32)
         }
 
