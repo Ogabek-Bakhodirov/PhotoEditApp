@@ -192,7 +192,6 @@
 				6EA913F228BB816A0096E449 /* ViewControllers */,
 				6EFF663528B6779500385620 /* Views */,
 				6E10F18428B1E09800FAD4DC /* AppDelegate.swift */,
-				6E10F18828B1E09800FAD4DC /* ViewController.swift */,
 				6E10F18D28B1E09900FAD4DC /* Assets.xcassets */,
 				6E10F18F28B1E09900FAD4DC /* LaunchScreen.storyboard */,
 				6E10F19228B1E09900FAD4DC /* Info.plist */,
@@ -219,6 +218,7 @@
 		6EA913F228BB816A0096E449 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6E10F18828B1E09800FAD4DC /* ViewController.swift */,
 				0FB7F4FA28B7CFF300D39D12 /* DiscoverViewController.swift */,
 				6EA913F328BB817E0096E449 /* Authentorization */,
 			);
