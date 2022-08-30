@@ -6,6 +6,8 @@
 import UIKit
 import SnapKit
 import ComponentKit
+import Firebase
+import FirebaseAuth
 
 class SignInView: UIView {
     lazy var signInBackgroundImage: UIImageView = {
@@ -87,9 +89,39 @@ class SignInView: UIView {
         ))
         view.layer.cornerRadius = 24.0
         view.clipsToBounds = true
+        view.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
 
         return view
     }()
+    
+    @objc func nextTapped(){
+        if let email = emailTextField.text, let password = passwordTextField.text{
+        
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+          guard let strongSelf = self else { return }
+            if let e = error{
+                self?.showAlertAction(title: "OK", message: "Wrong informations, try again !! ")
+                print(e.localizedDescription)
+            }else{
+                let vc = DiscoverViewController()
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .fullScreen
+                
+                
+            }
+        }
+        }
+        
+    }
+    
+    public func showAlertAction(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+            print("Action")
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true)
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
