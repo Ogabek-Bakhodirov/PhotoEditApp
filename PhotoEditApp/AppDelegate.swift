@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         // Override point for customization after application launch.
-
+        let navVC = DiscoverViewController()
         window = UIWindow()
         window?.rootViewController = SignInViewController()
         window?.makeKeyAndVisible()
