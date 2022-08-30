@@ -8,7 +8,7 @@ import SnapKit
 import ComponentKit
 
 class DiscoverView: UIView {
-    var names = ["Christmas", "Inspration", "Cyber", "Winter"]
+    var names = ["Christmas", "Inspration", "Cyber", "Winter", "Spring", "Autumn", "Summer", "Abstract"]
 
     lazy var discoverLabel: UILabel = {
         let label = UILabel()
@@ -49,10 +49,10 @@ class DiscoverView: UIView {
                         widthDimension: .fractionalWidth(1 / 3),
                         heightDimension: .fractionalHeight(1)
                     ))
-                item.contentInsets.bottom = 1.0
+                item.contentInsets.bottom = 5.0
                 item.contentInsets.leading = 1.0
-                item.contentInsets.top = 1.0
-                item.contentInsets.trailing = 5.0
+                item.contentInsets.top = 5.0
+                item.contentInsets.trailing = 7.0
                 let group = NSCollectionLayoutGroup.horizontal(
                     layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1 / 15)),
                     subitems: [item]
@@ -149,7 +149,7 @@ class DiscoverView: UIView {
         searchBar.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(23.0)
             make.right.equalToSuperview().inset(23.0)
-            make.top.equalTo(discoverLabel.snp_bottomMargin).inset(24.0)
+            make.top.equalToSuperview().inset(179.0)
             make.height.equalTo(50.0)
         }
         addSubview(collectionView)
@@ -181,14 +181,13 @@ extension DiscoverView: UICollectionViewDelegate, UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             cell.image.image = Images.ic_apple.image
-            cell.backgroundColor = .green
             return cell
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return 4
+            return 8
         } else {
             return 8
         }
