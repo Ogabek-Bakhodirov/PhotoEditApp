@@ -6,10 +6,14 @@
 import UIKit
 import SnapKit
 import ComponentKit
-import Firebase
-import FirebaseAuth
 
 class SignInView: UIView {
+    struct Events {
+        var signIn: ((String, String) -> Void)?
+    }
+
+    var events: Events = .init()
+
     lazy var signInBackgroundImage: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -18,11 +22,19 @@ class SignInView: UIView {
         return view
     }()
 
-    lazy var registrView: UIView = {
+    lazy var registrView2: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = Colors.base_background_dark.color
         view.clipsToBounds = true
+
+        return view
+    }()
+
+    lazy var registrView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
 
         return view
     }()
@@ -93,39 +105,13 @@ class SignInView: UIView {
 
         return view
     }()
-    
-    @objc func nextTapped(){
-        if let email = emailTextField.text, let password = passwordTextField.text{
-        
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-          guard let strongSelf = self else { return }
-            if let e = error{
-                self?.showAlertAction(title: "OK", message: "Wrong informations, try again !! ")
-                print(e.localizedDescription)
-            }else{
-                let vc = DiscoverViewController()
-                vc.modalTransitionStyle = .crossDissolve
-                vc.modalPresentationStyle = .fullScreen
-                
-                
-            }
-        }
-        }
-        
-    }
-    
-    public func showAlertAction(title: String, message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
-            print("Action")
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
-        present(alert, animated: true)
-    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubViews()
+
+        registrView2.layer.cornerRadius = 15.0
+        registrView2.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
 
     @available(*, unavailable)
@@ -136,6 +122,7 @@ class SignInView: UIView {
     private func setupSubViews() {
         addSubview(signInBackgroundImage)
         addSubview(registrView)
+        addSubview(registrView2)
         addSubview(pageController)
         addSubview(emailTextField)
         addSubview(passwordTextField)
@@ -149,6 +136,10 @@ class SignInView: UIView {
             make.height.equalToSuperview().multipliedBy(0.65)
         }
 
+        registrView2.snp.makeConstraints { make in
+            make.right.left.bottom.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(0.57)
+        }
         registrView.snp.makeConstraints { make in
             make.right.left.bottom.equalToSuperview()
             make.height.equalToSuperview().multipliedBy(0.57)
@@ -198,18 +189,10 @@ class SignInView: UIView {
             make.height.equalTo(50.0)
         }
     }
-}
 
-extension UIView {
-    func roundCornerView(corners: UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(
-            roundedRect: bounds,
-            byRoundingCorners: corners,
-            cornerRadii: .init(width: radius, height: radius)
-        )
-
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        layer.mask = mask
+    @objc func nextTapped() {
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            events.signIn?(email, password)
+        }
     }
 }
