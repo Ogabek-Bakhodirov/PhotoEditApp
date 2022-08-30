@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F93D7FE28BE511A00ED3193 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0F93D7FD28BE511A00ED3193 /* FirebaseAuth */; };
 		0F995BD928B3A18300B62252 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F995BD828B3A18300B62252 /* SignInView.swift */; };
 		0FB7F4FB28B7CFF300D39D12 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB7F4FA28B7CFF300D39D12 /* DiscoverViewController.swift */; };
 		0FB7F4FD28B7D09000D39D12 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB7F4FC28B7D09000D39D12 /* DiscoverView.swift */; };
@@ -113,6 +114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E161BED28B2946100D15F0F /* ComponentKit.framework in Frameworks */,
+				0F93D7FE28BE511A00ED3193 /* FirebaseAuth in Frameworks */,
 				CE90B73728B337A500D2481C /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +334,7 @@
 			name = PhotoEditApp;
 			packageProductDependencies = (
 				CE90B73628B337A500D2481C /* SnapKit */,
+				0F93D7FD28BE511A00ED3193 /* FirebaseAuth */,
 			);
 			productName = PhotoEditApp;
 			productReference = 6E10F18128B1E09800FAD4DC /* PhotoEditApp.app */;
@@ -410,6 +413,7 @@
 			mainGroup = 6E10F17828B1E09800FAD4DC;
 			packageReferences = (
 				CE90B73528B337A500D2481C /* XCRemoteSwiftPackageReference "SnapKit" */,
+				0F93D7FC28BE511A00ED3193 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 6E10F18228B1E09800FAD4DC /* Products */;
 			projectDirPath = "";
@@ -858,6 +862,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0F93D7FC28BE511A00ED3193 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		CE90B73528B337A500D2481C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -869,6 +881,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0F93D7FD28BE511A00ED3193 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F93D7FC28BE511A00ED3193 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
 		6EFF663928B67F6700385620 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE90B73528B337A500D2481C /* XCRemoteSwiftPackageReference "SnapKit" */;

@@ -8,6 +8,12 @@ import SnapKit
 import ComponentKit
 
 class SignInView: UIView {
+    struct Events {
+        var signIn: ((String, String) -> Void)?
+    }
+
+    var events: Events = .init()
+
     lazy var signInBackgroundImage: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -16,7 +22,7 @@ class SignInView: UIView {
         return view
     }()
 
-    lazy var registrView: UIView = {
+    lazy var registrView2: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = Colors.base_background_dark.color
@@ -25,12 +31,19 @@ class SignInView: UIView {
         return view
     }()
 
+    lazy var registrView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
+
+        return view
+    }()
+
     lazy var pageController: CKPageController = {
         let view = CKPageController()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.titles = ["Sign In", "Sign Up"]
-        view.onChanged = { index in
-
+        view.onChanged = { _ in
         }
 
         return view
@@ -88,6 +101,7 @@ class SignInView: UIView {
         ))
         view.layer.cornerRadius = 24.0
         view.clipsToBounds = true
+        view.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
 
         return view
     }()
@@ -95,6 +109,9 @@ class SignInView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubViews()
+
+        registrView2.layer.cornerRadius = 15.0
+        registrView2.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
 
     @available(*, unavailable)
@@ -105,6 +122,7 @@ class SignInView: UIView {
     private func setupSubViews() {
         addSubview(signInBackgroundImage)
         addSubview(registrView)
+        addSubview(registrView2)
         addSubview(pageController)
         addSubview(emailTextField)
         addSubview(passwordTextField)
@@ -118,6 +136,10 @@ class SignInView: UIView {
             make.height.equalToSuperview().multipliedBy(0.65)
         }
 
+        registrView2.snp.makeConstraints { make in
+            make.right.left.bottom.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(0.57)
+        }
         registrView.snp.makeConstraints { make in
             make.right.left.bottom.equalToSuperview()
             make.height.equalToSuperview().multipliedBy(0.57)
@@ -167,18 +189,10 @@ class SignInView: UIView {
             make.height.equalTo(50.0)
         }
     }
-}
 
-extension UIView {
-    func roundCornerView(corners: UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(
-            roundedRect: bounds,
-            byRoundingCorners: corners,
-            cornerRadii: .init(width: radius, height: radius)
-        )
-
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        layer.mask = mask
+    @objc func nextTapped() {
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            events.signIn?(email, password)
+        }
     }
 }
