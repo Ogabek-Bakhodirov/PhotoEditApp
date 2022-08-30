@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         window = UIWindow()
-        window?.rootViewController = DiscoverViewController()
+        window?.rootViewController = SignInViewController()
         window?.makeKeyAndVisible()
 
         return true
